@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navFragmentHome, R.id.navFragmentAboutUs, R.id.navFragmentActivities,
             R.id.navFragmentNews, R.id.navFragmentReviews, R.id.navFragmentDonate,
-            R.id.navFragmentContactUs), binding.dlSideBar)
+            R.id.navFragmentContactUs,R.id.navFragmentTestimonials), binding.dlSideBar)
 
         setupActionBarWithNavController(findNavController(R.id.navHostFragment),
             appBarConfiguration)

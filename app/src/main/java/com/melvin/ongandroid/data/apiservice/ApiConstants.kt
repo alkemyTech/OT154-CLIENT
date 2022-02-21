@@ -1,4 +1,4 @@
-package com.melvin.ongandroid.model.apiservice
+package com.melvin.ongandroid.data.apiservice
 
 /**
  * Este objeto representa las constantes de la API con sus respectivos valores

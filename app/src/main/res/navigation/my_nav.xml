@@ -31,6 +31,11 @@
         android:label="Testimonios"
         tools:layout="@layout/fragment_reviews" />
     <fragment
+        android:id="@+id/navFragmentTestimonials"
+        android:name="com.melvin.ongandroid.view.testimonial.TestimonialsFragment"
+        android:label="Testimonios"
+        tools:layout="@layout/fragment_testimonials" />
+    <fragment
         android:id="@+id/navFragmentContactUs"
         android:name="com.melvin.ongandroid.view.ContactUs"
         android:label="Contacto"
