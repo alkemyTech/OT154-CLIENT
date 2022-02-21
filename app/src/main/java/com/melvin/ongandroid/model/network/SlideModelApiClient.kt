@@ -17,8 +17,7 @@ import retrofit2.http.GET
  * Metodo que devuelve una lista de Slides desde en el end point 'api/slides'
  */
 interface SlideModelApiClient {
-    @GET(ApiConstants.SLIDES_END_POINT)
+    @GET("ApiConstants.SLIDES_END_POINT")
     suspend fun getAllSlides(): Response<SlideModelResponse>
-
 
 }
