@@ -11,6 +11,7 @@
     <string name="somos_mas_logo_description">Somos Mas Logo</string>
     <string name="testimonials_tittle">TESTIMONIOS</string>
     <string name="welcome_txt">Bienvenidos a SOMOS MAS ONG</string>
-
     <string name="textLoading">Loading...</string>
+    <string name="testimoniales_tittle">Testimonios</string>
+
 </resources>
