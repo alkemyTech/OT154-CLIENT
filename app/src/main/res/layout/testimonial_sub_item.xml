@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_avatar"
+        android:src="@drawable/ic_avatar_off"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:civ_border_color="#000"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.4"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="50dp"
+        android:paddingStart="50dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:gravity="top|center"
+        android:lines="4"
+        android:maxLength="100"
+        android:textColor="@color/black"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gl_avatar"
+        tools:text="asdasdasdasdas asdasdasd asdasdas asdasd asd" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_right_arrow"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

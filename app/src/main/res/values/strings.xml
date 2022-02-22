@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">ONGAndroid</string>
-    <string name="lastest_news">Ultimas Novedades</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_title">Inicio</string>
+    <string name="about_us_title">Nosotros</string>
+    <string name="activities_title">Actividades</string>
+    <string name="news_title">Novedades</string>
+    <string name="reviews_title">Testimonios</string>
+    <string name="contact_title">Contacto</string>
+    <string name="donate_title">Contribuye</string>
+    <string name="somos_mas_logo_description">Somos Mas Logo</string>
+    <string name="testimonials_tittle">TESTIMONIOS</string>
+    <string name="welcome_txt">Bienvenidos a SOMOS MAS ONG</string>
+    <!-- Error -->
+    <string name="error_textview_message">Ha ocurrido un error obteniendo la información</string>
+    <string name="error_bt_retry">Reintentar</string>
+    <string name="error_dialog">Cerrar</string>
+
+
 </resources>
