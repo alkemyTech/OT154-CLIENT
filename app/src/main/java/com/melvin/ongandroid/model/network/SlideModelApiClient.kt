@@ -7,8 +7,7 @@ package com.melvin.ongandroid.model.network
  * @author Martin Re
  */
 
-import com.melvin.ongandroid.model.apimodel.SlideModelResponse
-import com.melvin.ongandroid.model.apiservice.ApiConstants
+import com.melvin.ongandroid.model.apiservice.apimodel.SlideModelResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

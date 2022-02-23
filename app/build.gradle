@@ -87,13 +87,14 @@ dependencies {
 
     //Glide
     implementation "com.github.bumptech.glide:glide:4.11.0"
+
     //Image Carousel
     implementation "com.mig35:carousellayoutmanager:1.4.6"
     implementation "me.relex:circleindicator:2.1.6"
     implementation "org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:1.2.1"
 
     //okhttp
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:okhttp:4.9.2"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
 

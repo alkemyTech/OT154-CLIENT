@@ -1,7 +1,7 @@
 package com.melvin.ongandroid.bussinesslogic
 
 import com.melvin.ongandroid.model.apimodel.ActivityModel
-import com.melvin.ongandroid.model.repository.ActivitiesRepository
+import com.melvin.ongandroid.model.apiservice.repository.ActivitiesRepository
 
 
 
