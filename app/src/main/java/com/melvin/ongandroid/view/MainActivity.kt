@@ -12,6 +12,7 @@ import com.melvin.ongandroid.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         setSupportActionBar(binding.appToolbar.toolbar)
         appBarConfiguration = AppBarConfiguration(setOf(
@@ -34,5 +36,6 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.navHostFragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+
     }
 }
