@@ -10,10 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
 import com.melvin.ongandroid.data.ComponentUtils.Companion.showToast
 import com.melvin.ongandroid.data.apiservice.APIManager
-import com.melvin.ongandroid.data.datasource.TestimonialDataSource
 import com.melvin.ongandroid.data.datasource.TestimonialDataSourceImpl
 import com.melvin.ongandroid.data.repository.TestimonialRepositoryImpl
-import com.melvin.ongandroid.data.repository.TestimonialsRepository
 import com.melvin.ongandroid.data.utils.DataState
 import com.melvin.ongandroid.databinding.FragmentTestimonialsBinding
 import com.melvin.ongandroid.model.Testimonial
