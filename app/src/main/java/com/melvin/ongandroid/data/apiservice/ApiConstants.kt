@@ -9,6 +9,5 @@ package com.melvin.ongandroid.data.apiservice
 object ApiConstants {
 
     const val BASE_URL = "http://ongapi.alkemy.org/"
-    const val SLIDES_END_POINT = "api/slides"
 
 }

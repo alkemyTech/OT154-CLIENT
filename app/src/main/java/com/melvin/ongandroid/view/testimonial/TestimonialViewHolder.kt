@@ -4,7 +4,6 @@ import android.view.View
 import android.webkit.URLUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.TestimonialSubItemBinding
 import com.melvin.ongandroid.model.Testimonial
 
@@ -18,7 +17,7 @@ class TestimonialViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             tvDescription.text = testimonial.descriptionQuotationMarks
             testimonial.image.let {
                 if(it.isNotEmpty() && URLUtil.isValidUrl(it))
-                    Glide.with(root.context).load(testimonial.image).placeholder(R.drawable.ic_avatar_off).into(civAvatar)
+                    Glide.with(root.context).load(testimonial.image).into(civAvatar)
             }
         }
     }
