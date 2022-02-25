@@ -15,5 +15,9 @@
     <string name="testimoniales_tittle">Testimonios</string>
     <string name="error_textview_message">Error General</string>
     <string name="error_bt_retry">Reintentar</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="registro">Registro</string>
+    <string name="iniciar">Iniciar</string>
 
 </resources>
