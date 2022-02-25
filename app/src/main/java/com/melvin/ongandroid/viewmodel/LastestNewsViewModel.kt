@@ -2,6 +2,10 @@ package com.melvin.ongandroid.viewmodel
 
 import androidx.lifecycle.ViewModel
 import org.imaginativeworld.whynotimagecarousel.CarouselItem
+<<<<<<< HEAD
+=======
+
+>>>>>>> 79ff99d8fe4a12b99706487cc06e7802c5d64b2c
 
 class LastestNewsViewModel :ViewModel() {
 
