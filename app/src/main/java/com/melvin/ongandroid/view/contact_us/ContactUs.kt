@@ -6,10 +6,12 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.FragmentContactUsBinding
 import com.melvin.ongandroid.databinding.FragmentHomeBinding
+import com.melvin.ongandroid.utils.Validator
 
 class ContactUs : Fragment(R.layout.fragment_contact_us) {
     lateinit var binding: FragmentContactUsBinding
@@ -26,6 +28,11 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
 
     private val textWatcher = object : TextWatcher {
         override fun afterTextChanged(p0: Editable?) {
+            var txtEmail = binding.textfieldEmailFragmentContactUs.text.toString().trim()
+            if (!Validator.isEmailValid(txtEmail)){
+             val toast = Toast.makeText(context,"El Formato de email no es valido.",Toast.LENGTH_SHORT)
+                toast.show()
+            }
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -34,7 +41,7 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
             var txtLastName = binding.textfieldLastnameFragmentContactUs.text.toString().trim()
             var txtQuestions = binding.textfieldQuestionFragmentContactUs.text.toString().trim()
 
-            buttonSubmitIsEnabled(txtEmail.isNotEmpty() && txtName.isNotEmpty() && txtLastName.isNotEmpty() && txtQuestions.isNotEmpty())
+            buttonSubmitIsEnabled(txtEmail.isNotEmpty() && Validator.isEmailValid(txtEmail) && txtName.isNotEmpty() && txtLastName.isNotEmpty() && txtQuestions.isNotEmpty())
         }
 
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
