@@ -1,4 +1,4 @@
-package com.melvin.ongandroid.model.repository
+package com.melvin.ongandroid.model.apiservice.repository
 
 
 
@@ -19,10 +19,10 @@ class ActivitiesRepository {
 
     suspend fun getActivitiesFromApi(): List<ActivityModel>? {
         val response = apiService.getActivities()
-        if (response.isSuccessful){
-            return response.body()?.data
+        return if (response.isSuccessful){
+            response.body()?.data
         }else{
-            return emptyList()
+            emptyList()
         }
 
     }
