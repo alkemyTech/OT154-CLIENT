@@ -3,9 +3,12 @@ package com.melvin.ongandroid.viewmodel
 import androidx.lifecycle.ViewModel
 import org.imaginativeworld.whynotimagecarousel.CarouselItem
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 79ff99d8fe4a12b99706487cc06e7802c5d64b2c
+=======
+>>>>>>> 242e7239aabdb1dd26c2e781d3c43ec6aa0de220
 
 class LastestNewsViewModel :ViewModel() {
 

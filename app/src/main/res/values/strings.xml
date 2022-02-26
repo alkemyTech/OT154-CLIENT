@@ -12,8 +12,17 @@
     <string name="testimonials_tittle">TESTIMONIOS</string>
     <string name="welcome_txt">Bienvenidos a SOMOS MAS ONG</string>
     <string name="textLoading">Loading...</string>
+<<<<<<< HEAD
     <string name="lastest_news">Ultimas noticias</string>
     <string name="error_textview_message">Error General</string>
+=======
+    <string name="testimoniales_tittle">Testimonios</string>
+
+    <string name="lastest_news">Ultimas noticias</string>
+
+    <string name="error_textview_message">Error General</string>
+
+>>>>>>> 242e7239aabdb1dd26c2e781d3c43ec6aa0de220
     <string name="error_bt_retry">Reintentar</string>
 <<<<<<< HEAD
 =======
