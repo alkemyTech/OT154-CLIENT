@@ -1,9 +1,9 @@
-package com.melvin.ongandroid.model.network
+package com.melvin.ongandroid.model.apiservice.network
 
 
+import com.melvin.ongandroid.data.apiservice.RetrofitInstance
 import com.melvin.ongandroid.model.apiservice.apimodel.SlideModelResponse
-import com.melvin.ongandroid.model.apiservice.RetrofitInstance
-import com.melvin.ongandroid.model.apiservice.network.SlideModelApiClient
+
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -18,7 +18,7 @@ import retrofit2.Response
  */
 class SlideModelService {
 
-    private val retrofit = RetrofitInstance.getInstance()
+    private val retrofit = RetrofitInstance.retrofitBuilder()
 
     suspend fun getActivities():Response<SlideModelResponse>{
          return withContext(Dispatchers.IO){
