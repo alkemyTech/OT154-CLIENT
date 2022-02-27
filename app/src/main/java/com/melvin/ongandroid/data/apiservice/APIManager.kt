@@ -1,9 +1,15 @@
 package com.melvin.ongandroid.data.apiservice
 
-import retrofit2.Response
+import com.melvin.ongandroid.data.response.ResponseApi
+import com.melvin.ongandroid.model.Testimonial
 
 class APIManager {
-//    suspend fun getPopularMovies(): Response<TestimonialsDTO> {
-//        return getRetrofitInstance().getPopularMovies()
-//    }
+
+    suspend fun getTestimonials(): ResponseApi<MutableList<Testimonial>> {
+        return getRetrofitInstance().getTestimonials()
+    }
+
+    private fun getRetrofitInstance(): APIService {
+        return Retrofit2.getRetrofit().create(APIService::class.java)
+    }
 }

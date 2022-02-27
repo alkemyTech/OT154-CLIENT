@@ -1,4 +1,4 @@
-package com.melvin.ongandroid.model.apiservice.network
+package com.melvin.ongandroid.model.network
 
 /**
  * Esta interface representa consulta a la api del proyecto
@@ -7,7 +7,7 @@ package com.melvin.ongandroid.model.apiservice.network
  * @author Martin Re
  */
 
-import com.melvin.ongandroid.model.apiservice.apimodel.SlideModelResponse
+import com.melvin.ongandroid.model.apimodel.SlideModelResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -18,4 +18,5 @@ import retrofit2.http.GET
 interface SlideModelApiClient {
     @GET("api/slides")
     suspend fun getAllSlides(): Response<SlideModelResponse>
+
 }
