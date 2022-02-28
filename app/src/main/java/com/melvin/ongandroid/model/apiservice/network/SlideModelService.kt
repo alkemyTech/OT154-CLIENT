@@ -1,8 +1,8 @@
-package com.melvin.ongandroid.model.apiservice.network
+package com.melvin.ongandroid.model.network
 
 
 import com.melvin.ongandroid.data.apiservice.RetrofitInstance
-import com.melvin.ongandroid.model.apiservice.apimodel.SlideModelResponse
+import com.melvin.ongandroid.model.apimodel.SlideModelResponse
 
 
 import kotlinx.coroutines.Dispatchers
