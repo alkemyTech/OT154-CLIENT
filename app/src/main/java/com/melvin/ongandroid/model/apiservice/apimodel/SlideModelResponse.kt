@@ -1,7 +1,6 @@
-package com.melvin.ongandroid.model.apiservice.apimodel
+package com.melvin.ongandroid.model.apimodel
 
 import com.google.gson.annotations.SerializedName
-import com.melvin.ongandroid.model.apimodel.ActivityModel
 
 /**
  * Data class que representa un response a consulta backend/api

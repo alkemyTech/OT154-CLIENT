@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    tools:context=".view.ContactUs">
+    tools:context=".view.contact_us.ContactUs">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                 android:text="@string/string_title_text_view_fragment_contactus"
                 android:textColor="@color/black"
                 android:textSize="@dimen/size_textview_title_fragment_contactus"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/linear_layout_contains_textfield"
@@ -56,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/string_firstname_textfield_fragment_contactus"
                         android:inputType="text"
-                        android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
+                        android:textSize="@dimen/size_textfield_fragment_contactus" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -75,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/string_lastname_textfield_fragment_contactus"
                         android:inputType="text"
-                        android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
+                        android:textSize="@dimen/size_textfield_fragment_contactus" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/string_email_textfield_fragment_contactus"
                     android:inputType="text"
-                    android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
+                    android:textSize="@dimen/size_textfield_fragment_contactus" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -117,7 +117,7 @@
                     android:hint="@string/string_question_textfield_fragment_contactus"
                     android:maxLines="30"
                     android:scrollbars="vertical"
-                    android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
+                    android:textSize="@dimen/size_textfield_fragment_contactus" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,6 +128,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:backgroundTint="@color/light_blue_600"
+                android:enabled="false"
                 android:text="@string/string_button_fragment_contactus"
                 android:textAllCaps="false"
                 android:textSize="@dimen/size_textfield_fragment_contactus">

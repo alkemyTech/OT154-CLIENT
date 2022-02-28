@@ -29,7 +29,6 @@
     <string name="check_your_internet_connection">Check your internet connection</string>
     <string name="incorrect_user_or_password">Incorrect user or password</string>
     <string name="username">Nombre de usuario</string>
-    <string name="email">Correo</string>
     <string name="password">Contraseña</string>
     <string name="confirm_password">Confirmar Contraseña</string>
     <string name="title_sign_up">Registrar Usuario</string>
