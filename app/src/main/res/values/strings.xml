@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ONGAndroid</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_title">Inicio</string>
     <string name="about_us_title">Nosotros</string>
@@ -49,6 +50,5 @@
     <string name="contact_send">Consulta enviada</string>
     <string name="contact_send_description">Su consulta fue enviada con exito</string>
     <string name="ok_button">Aceptar</string>
-
 
 </resources>
