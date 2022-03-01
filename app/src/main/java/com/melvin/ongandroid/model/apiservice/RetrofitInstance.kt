@@ -8,18 +8,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    private fun retrofitBuilder(): Retrofit{
+
+    fun getInstance(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(ApiConstants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(getOkhttpClient())
+            .client(getOkHttpClient())
             .build()
     }
 
-    private fun getOkhttpClient(): OkHttpClient {
-        var interceptor = HttpLoggingInterceptor()
+    private fun getOkHttpClient(): OkHttpClient {
+        var interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BASIC
-        val client = OkHttpClient.Builder()
+        val client : OkHttpClient.Builder= OkHttpClient.Builder()
             .cache(null)
             .addInterceptor(interceptor)
 

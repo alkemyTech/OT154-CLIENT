@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/navFragmentContactUs">
+
+    <fragment
+        android:id="@+id/navFragmentAboutUs"
+        android:name="com.melvin.ongandroid.view.AboutUs"
+        android:label="Nosotros"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/navFragmentActivities"
+        android:name="com.melvin.ongandroid.view.Activities"
+        android:label="Actividades"
+        tools:layout="@layout/fragment_activities" />
+    <fragment
+        android:id="@+id/navFragmentHome"
+        android:name="com.melvin.ongandroid.view.home.HomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navFragmentNews"
+        android:name="com.melvin.ongandroid.view.News"
+        android:label="Novedades"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/navFragmentReviews"
+        android:name="com.melvin.ongandroid.view.Reviews"
+        android:label="Testimonios"
+        tools:layout="@layout/fragment_reviews" />
+    <fragment
+        android:id="@+id/navFragmentTestimonials"
+        android:name="com.melvin.ongandroid.view.testimonial.TestimonialsFragment"
+        android:label="Testimonios"
+        tools:layout="@layout/fragment_testimonials" />
+    <fragment
+        android:id="@+id/navFragmentContactUs"
+        android:name="com.melvin.ongandroid.view.contact_us.ContactUs"
+        android:label="Contacto"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/navFragmentDonate"
+        android:name="com.melvin.ongandroid.view.Donate"
+        android:label="Contribuye"
+        tools:layout="@layout/fragment_donate" />
+</navigation>

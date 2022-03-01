@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navFragmentHome"
+        android:title="@string/home_title" />
+    <item
+        android:id="@+id/navFragmentAboutUs"
+        android:title="@string/about_us_title" />
+    <item
+        android:id="@+id/navFragmentActivities"
+        android:title="@string/activities_title" />
+    <item
+        android:id="@+id/navFragmentNews"
+        android:title="@string/news_title" />
+    <item
+        android:id="@+id/navFragmentReviews"
+        android:title="@string/reviews_title" />
+    <item
+        android:id="@+id/navFragmentContactUs"
+        android:title="@string/contact_title" />
+    <item
+        android:id="@+id/navFragmentDonate"
+        android:title="@string/donate_title" />
+
+</menu>
