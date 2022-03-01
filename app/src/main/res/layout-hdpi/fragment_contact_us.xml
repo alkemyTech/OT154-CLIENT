@@ -89,7 +89,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/string_email_textfield_fragment_contactus"
                 android:inputType="text"
-                android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
+                android:textSize="@dimen/size_textfield_fragment_contactus">
+            </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

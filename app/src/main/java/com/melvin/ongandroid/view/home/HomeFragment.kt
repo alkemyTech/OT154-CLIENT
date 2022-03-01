@@ -3,7 +3,6 @@ package com.melvin.ongandroid.view.home
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels

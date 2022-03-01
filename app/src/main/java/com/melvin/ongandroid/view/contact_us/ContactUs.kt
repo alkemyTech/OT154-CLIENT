@@ -1,5 +1,6 @@
 package com.melvin.ongandroid.view.contact_us
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,13 +14,11 @@ import com.melvin.ongandroid.data.datasource.ContactDataSourceImpl
 import com.melvin.ongandroid.data.repository.ContactRepositoryImpl
 import com.melvin.ongandroid.databinding.FragmentContactUsBinding
 import com.melvin.ongandroid.model.Contact
-import com.melvin.ongandroid.model.Testimonial
-import com.melvin.ongandroid.view.testimonial.TestimonialViewModel
-import com.melvin.ongandroid.view.testimonial.TestimonialViewModelFactory
 import com.melvin.ongandroid.view.utils.ComponentUtils.Companion.showAlert
 import com.melvin.ongandroid.view.utils.ComponentUtils.Companion.showToast
 import com.melvin.ongandroid.view.utils.DataState
 import com.melvin.ongandroid.view.utils.Validator
+
 
 class ContactUs : Fragment(R.layout.fragment_contact_us) {
     lateinit var binding: FragmentContactUsBinding
@@ -45,6 +44,11 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
             textfieldFirstnameFragmentContactUs.addTextChangedListener(textWatcher)
             textfieldLastnameFragmentContactUs.addTextChangedListener(textWatcher)
         }
+        binding.textfieldQuestionFragmentContactUs.addTextChangedListener(textWatcher)
+        binding.textfieldEmailFragmentContactUs.addTextChangedListener(textWatcher)
+        binding.textfieldFirstnameFragmentContactUs.addTextChangedListener(textWatcher)
+        binding.textfieldLastnameFragmentContactUs.addTextChangedListener(textWatcher)
+
     }
 
     private val textWatcher = object : TextWatcher {
