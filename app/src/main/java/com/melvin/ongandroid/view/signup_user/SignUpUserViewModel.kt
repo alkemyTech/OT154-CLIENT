@@ -14,12 +14,13 @@ class SignUpUserViewModel: ViewModel() {
 
 
 
-    fun validateButtonRegister(firstName: String, lastName:String, email: String,
-    password: String, confirmPass: String){
+    fun validateButtonRegister(userName: String, email: String,
+                               password: String, confirmPass: String){
 
         _buttonRegisterIsEnabled.postValue(
-            firstName.isNotEmpty() && lastName.isNotEmpty()
-                    && email.isNotEmpty() && password.isNotEmpty() && confirmPass.isNotEmpty()
+            userName.isNotEmpty()
+                    && email.isNotEmpty()
+                    && password.isNotEmpty() && confirmPass.isNotEmpty()
                     && passwordAndConfirmPasswordIsEquals(password, confirmPass)
                     && Validator.isEmailValid(email)
                     && Validator.isPasswordValid(password)

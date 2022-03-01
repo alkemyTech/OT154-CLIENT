@@ -67,7 +67,7 @@
                         android:padding="1dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/text_field_first_name_user_register_view"
+                            android:id="@+id/text_field_username_user_register_view"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/string_first_name_user_register_view"
@@ -75,24 +75,6 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/text_input_layout_last_name_user_register_view"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="1dp"
-                        android:layout_weight="1"
-                        android:padding="1dp">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/text_field_last_name_user_register_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/string_last_name_user_register_view"
-                            android:inputType="text" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
 

@@ -18,7 +18,7 @@
     <string name="error_textview_message">Ha ocurrido un error obteniendo la información</string>
 
     <string name="lastest_news">Ultimas noticias</string>
-    <string name="error_textview_message">Error General</string>
+    <string name="error_textview_messages">Error General</string>
 
     <string name="error_bt_retry">Reintentar</string>
     <string name="contrasenia">Contraseña</string>
@@ -53,8 +53,7 @@
     <string name="string_question_textfield_fragment_contactus">Escribe tu consulta</string>
 
     <!---UserRegisterView-->
-    <string name="string_first_name_user_register_view">Nombre</string>
-    <string name="string_last_name_user_register_view">Apellido</string>
+    <string name="string_first_name_user_register_view">Nombre de Usuario</string>>
     <string name="string_email_user_register_view">Email</string>
     <string name="string_password_user_register_view">Contraseña</string>
     <string name="string_confirm_password_user_register_view">Repita Contraseña</string>

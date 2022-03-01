@@ -1,6 +1,6 @@
 package com.melvin.ongandroid.view
 
-
+/*
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
@@ -63,3 +63,4 @@ class SignUpActivity : AppCompatActivity{
 
     }
 }
+*/

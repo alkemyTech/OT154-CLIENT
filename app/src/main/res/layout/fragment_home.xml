@@ -75,6 +75,7 @@
                 android:layout_margin="16dp"
                 android:scaleType="centerCrop"
                 app:carouselType="SHOWCASE" />
+
         </LinearLayout>
 
         <TextView
@@ -82,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="300dp"
-            android:text="@string/error_textview_message"
+            android:text="@string/error_textview_messages"
             android:textAlignment="center"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +103,8 @@
             app:layout_constraintStart_toStartOf="@+id/textview_error"
             app:layout_constraintTop_toBottomOf="@+id/textview_error"
             app:layout_constraintVertical_bias="1.0"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>
