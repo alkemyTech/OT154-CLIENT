@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- xxxhdpi -->
+    <dimen name="size_textview_title_fragment_contactus">24sp</dimen>
+    <dimen name="size_textfield_fragment_contactus">22sp</dimen>
+
+</resources>

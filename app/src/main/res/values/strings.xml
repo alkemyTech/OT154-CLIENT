@@ -12,10 +12,40 @@
     <string name="somos_mas_logo_description">Somos Mas Logo</string>
     <string name="testimonials_tittle">TESTIMONIOS</string>
     <string name="welcome_txt">Bienvenidos a SOMOS MAS ONG</string>
-    <!-- Error -->
-    <string name="error_textview_message">Ha ocurrido un error obteniendo la información</string>
+    <string name="textLoading">Loading...</string>
+    <string name="testimoniales_tittle">Testimonios</string>
+    <string name="error_textview_message">Error General</string>
     <string name="error_bt_retry">Reintentar</string>
-    <string name="error_dialog">Cerrar</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="registro">Registro</string>
+    <string name="iniciar">Iniciar</string>
 
+    <string name="api_error">Api error</string>
+    <string name="error">Error</string>
+    <string name="sign_up_error">Error al registrarse</string>
+    <string name="ok">OK</string>
+    <string name="bad_request">Bad request</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="check_your_internet_connection">Check your internet connection</string>
+    <string name="incorrect_user_or_password">Incorrect user or password</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="confirm_password">Confirmar Contraseña</string>
+    <string name="title_sign_up">Registrar Usuario</string>
+    <string name="text_button_save">Guardar</string>
+    <string name="text_button_cancel">Cancelar</string>
+    <string name="error_passwords_matches">Passwords are not the same</string>
+    <string name="user_success_sign_up">User was successfully register</string>
+
+
+
+    <!-- FragmentContactUs -->
+    <string name="string_firstname_textfield_fragment_contactus">Nombre</string>
+    <string name="string_title_text_view_fragment_contactus">Contactate con nosotros</string>
+    <string name="string_lastname_textfield_fragment_contactus">Apellido</string>
+    <string name="string_email_textfield_fragment_contactus">Email</string>
+    <string name="string_button_fragment_contactus">Enviar</string>
+    <string name="string_question_textfield_fragment_contactus">Escribe tu consulta</string>
 
 </resources>
