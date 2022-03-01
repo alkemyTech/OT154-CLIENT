@@ -15,10 +15,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/rv_testimonial"
-        android:text="@string/testimoniales_tittle"
+        android:text="@string/testimonials_tittle"
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <include
+        android:id="@+id/i_progress_bar"
+        layout="@layout/loading"
+        />
+    <include
+        android:id="@+id/i_generic_error"
+        layout="@layout/generic_error" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_testimonial"
         android:layout_width="0dp"

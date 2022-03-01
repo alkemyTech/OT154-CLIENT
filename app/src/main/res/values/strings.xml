@@ -13,8 +13,13 @@
     <string name="testimonials_tittle">TESTIMONIOS</string>
     <string name="welcome_txt">Bienvenidos a SOMOS MAS ONG</string>
     <string name="textLoading">Loading...</string>
+
     <string name="testimoniales_tittle">Testimonios</string>
     <string name="error_textview_message">Ha ocurrido un error obteniendo la información</string>
+
+    <string name="lastest_news">Ultimas noticias</string>
+    <string name="error_textview_message">Error General</string>
+
     <string name="error_bt_retry">Reintentar</string>
     <string name="contrasenia">Contraseña</string>
     <string name="email">Email</string>
@@ -48,6 +53,5 @@
     <string name="string_email_textfield_fragment_contactus">Email</string>
     <string name="string_button_fragment_contactus">Enviar</string>
     <string name="string_question_textfield_fragment_contactus">Escribe tu consulta</string>
-
 
 </resources>
