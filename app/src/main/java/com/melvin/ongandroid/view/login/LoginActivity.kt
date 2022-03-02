@@ -15,6 +15,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     //Funcion para mostrar el modal dialog al llamar al endpoint "api/login"
+
     fun showErrorDialog(title: String, message: String?) {
         val dialog: AlertDialog =
             AlertDialog.Builder(this).setMessage(message).setTitle(title)
