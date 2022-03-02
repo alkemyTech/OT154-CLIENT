@@ -1,4 +1,4 @@
-package com.melvin.ongandroid.utils
+package com.melvin.ongandroid.view.utils
 
 import java.util.regex.Pattern
 

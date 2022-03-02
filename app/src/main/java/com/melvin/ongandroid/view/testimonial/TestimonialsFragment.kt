@@ -8,20 +8,18 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
-import com.melvin.ongandroid.data.ComponentUtils.Companion.showToast
-import com.melvin.ongandroid.data.apiservice.APIManager
-import com.melvin.ongandroid.data.datasource.TestimonialDataSource
+import com.melvin.ongandroid.view.utils.ComponentUtils.Companion.showToast
+import com.melvin.ongandroid.data.apiservice.APITestimonialManager
 import com.melvin.ongandroid.data.datasource.TestimonialDataSourceImpl
 import com.melvin.ongandroid.data.repository.TestimonialRepositoryImpl
-import com.melvin.ongandroid.data.repository.TestimonialsRepository
-import com.melvin.ongandroid.data.utils.DataState
+import com.melvin.ongandroid.view.utils.DataState
 import com.melvin.ongandroid.databinding.FragmentTestimonialsBinding
 import com.melvin.ongandroid.model.Testimonial
 
 class TestimonialsFragment : Fragment() {
     private lateinit var binding: FragmentTestimonialsBinding
     private lateinit var adapterTestimonials: TestimonialsAdapter
-    private val repository = TestimonialRepositoryImpl(TestimonialDataSourceImpl(APIManager()))
+    private val repository = TestimonialRepositoryImpl(TestimonialDataSourceImpl(APITestimonialManager()))
     private lateinit var viewModel: TestimonialViewModel
 
 

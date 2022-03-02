@@ -1,4 +1,4 @@
-package com.melvin.ongandroid.data.utils
+package com.melvin.ongandroid.view.utils
 
 sealed class DataState<out R> {
     data class Success<out T>(val data: T) : DataState<T>()

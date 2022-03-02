@@ -3,6 +3,7 @@ package com.melvin.ongandroid.viewmodel
 import androidx.lifecycle.ViewModel
 import org.imaginativeworld.whynotimagecarousel.CarouselItem
 
+
 class LastestNewsViewModel :ViewModel() {
 
     fun addItems(): List<CarouselItem>{

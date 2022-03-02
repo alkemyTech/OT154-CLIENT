@@ -1,6 +1,6 @@
 package com.melvin.ongandroid.model.apiservice
 
-import com.melvin.ongandroid.constantsapi.ApiConstants
+import com.melvin.ongandroid.data.apiservice.ApiConstants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
@@ -15,6 +15,9 @@ class RetrofitInstance {
             .build()
     }
 }
+
+}
+
 
     private fun getOkHttpClient(): OkHttpClient {
         var interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor()
