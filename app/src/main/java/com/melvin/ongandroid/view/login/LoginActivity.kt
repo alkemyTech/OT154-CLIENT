@@ -6,7 +6,7 @@ import androidx.appcompat.app.AlertDialog
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.LogInBinding
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var binding: LogInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
