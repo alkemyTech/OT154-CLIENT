@@ -14,13 +14,13 @@
     <string name="welcome_txt">Bienvenidos a SOMOS MAS ONG</string>
     <string name="textLoading">Loading...</string>
     <string name="testimoniales_tittle">Testimonios</string>
-    <string name="error_textview_message">Error General</string>
+    <string name="error_textview_message">Ha ocurrido un error obteniendo la información</string>
+    <string name="lastest_news">Ultimas noticias</string>
     <string name="error_bt_retry">Reintentar</string>
     <string name="contrasenia">Contraseña</string>
     <string name="email">Email</string>
     <string name="registro">Registro</string>
     <string name="iniciar">Iniciar</string>
-
     <string name="api_error">Api error</string>
     <string name="error">Error</string>
     <string name="sign_up_error">Error al registrarse</string>
@@ -37,8 +37,7 @@
     <string name="text_button_cancel">Cancelar</string>
     <string name="error_passwords_matches">Passwords are not the same</string>
     <string name="user_success_sign_up">User was successfully register</string>
-
-
+    <string name="error_textview_contact">Ha ocurrido un error. Intente nuevamente mas tarde</string>
 
     <!-- FragmentContactUs -->
     <string name="string_firstname_textfield_fragment_contactus">Nombre</string>
@@ -47,5 +46,19 @@
     <string name="string_email_textfield_fragment_contactus">Email</string>
     <string name="string_button_fragment_contactus">Enviar</string>
     <string name="string_question_textfield_fragment_contactus">Escribe tu consulta</string>
+    <string name="invalid_email_text">El Formato de email no es valido.</string>
+    <string name="contact_send">Consulta enviada</string>
+    <string name="contact_send_description">Su consulta fue enviada con exito</string>
+    <string name="ok_button">Aceptar</string>
+
+    <!---UserRegisterView-->
+    <string name="string_first_name_user_register_view">Nombre</string>
+    <string name="string_last_name_user_register_view">Apellido</string>
+    <string name="string_email_user_register_view">Email</string>
+    <string name="string_password_user_register_view">Contraseña</string>
+    <string name="string_confirm_password_user_register_view">Repita Contraseña</string>
+    <string name="string_button_register_user_register_view">Registrarse</string>
+    <string name="string_error_password_not_equals_user_register_view">Passwords are not the same</string>
+    <string name="cd_image_logo_user_register_view">logo</string>
 
 </resources>

@@ -1,8 +1,8 @@
 package com.melvin.ongandroid.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import org.imaginativeworld.whynotimagecarousel.CarouselItem
+
 
 class LastestNewsViewModel :ViewModel() {
 
