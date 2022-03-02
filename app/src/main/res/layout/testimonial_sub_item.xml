@@ -8,6 +8,7 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civ_avatar"
+        android:src="@drawable/ic_avatar_off"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
