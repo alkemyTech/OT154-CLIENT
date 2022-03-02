@@ -38,7 +38,7 @@
     <string name="error_passwords_matches">Passwords are not the same</string>
     <string name="user_success_sign_up">User was successfully register</string>
     <string name="error_textview_contact">Ha ocurrido un error. Intente nuevamente mas tarde</string>
-    <string name="error_login">Ha ocurrido un error. Verifica tu email y tu contraseña</string>
+
     <!-- FragmentContactUs -->
     <string name="string_firstname_textfield_fragment_contactus">Nombre</string>
     <string name="string_title_text_view_fragment_contactus">Contactate con nosotros</string>
