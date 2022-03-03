@@ -26,9 +26,16 @@ class SignUpUserActivity : AppCompatActivity() {
         binding.textFieldConfirmPasswordUserRegisterView.addTextChangedListener(signUpTextWatcher())
 
         setObserver()
+
+        binding.buttonRegisterUserRegisterView.setOnClickListener {
+            val username = "TO-DO"
+            val email = binding.textFieldEmailUserRegisterView.text.toString().trim()
+            val password = binding.textFieldPasswordUserRegisterView.text.toString().trim()
+            viewModel.registerNewUser(username, email, password, this)
+        }
     }
 
-    private fun signUpTextWatcher():TextWatcher = object: TextWatcher{
+    private fun signUpTextWatcher(): TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
         }
@@ -38,10 +45,13 @@ class SignUpUserActivity : AppCompatActivity() {
             val lastName = binding.textFieldLastNameUserRegisterView.text.toString().trim()
             val email = binding.textFieldEmailUserRegisterView.text.toString().trim()
             val password = binding.textFieldPasswordUserRegisterView.text.toString().trim()
-            val confirmPass = binding.textFieldConfirmPasswordUserRegisterView.text.toString().trim()
+            val confirmPass =
+                binding.textFieldConfirmPasswordUserRegisterView.text.toString().trim()
 
-            viewModel.validateButtonRegister(firstname, lastName, email,
-                password, confirmPass)
+            viewModel.validateButtonRegister(
+                firstname, lastName, email,
+                password, confirmPass
+            )
 
         }
 
@@ -51,12 +61,12 @@ class SignUpUserActivity : AppCompatActivity() {
 
     }
 
-    private fun buttonRegisterIsEnabled(value:Boolean){
+    private fun buttonRegisterIsEnabled(value: Boolean) {
         binding.buttonRegisterUserRegisterView.isEnabled = value
     }
 
 
-    private fun setErrorMsg(value: Boolean){
+    private fun setErrorMsg(value: Boolean) {
         if (value)
             binding.textViewMsgErrorPasswordUserRegisterView.text =
                 resources.getString(R.string.string_error_password_not_equals_user_register_view)
@@ -65,20 +75,22 @@ class SignUpUserActivity : AppCompatActivity() {
 
     }
 
-    private fun setObserver(){
-        viewModel.buttonRegisterIsEnabled.observe(this, {
-                b -> buttonRegisterIsEnabled(b)
+    private fun setObserver() {
+        viewModel.buttonRegisterIsEnabled.observe(this, { b ->
+            buttonRegisterIsEnabled(b)
         })
 
-        viewModel.errorMsgIsEnabled.observe(this, {
-                e -> setErrorMsg(e)
+        viewModel.errorMsgIsEnabled.observe(this, { e ->
+            setErrorMsg(e)
         })
 
 
-class SignUpUserActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up_user)
+        class SignUpUserActivity : AppCompatActivity() {
+            override fun onCreate(savedInstanceState: Bundle?) {
+                super.onCreate(savedInstanceState)
+                setContentView(R.layout.activity_sign_up_user)
 
+            }
+        }
     }
 }
