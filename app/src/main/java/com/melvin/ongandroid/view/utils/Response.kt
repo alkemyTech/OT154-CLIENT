@@ -1,4 +1,4 @@
-package com.melvin.ongandroid.data.utils
+package com.melvin.ongandroid.view.utils
 
 sealed class Response<out T> {
     data class Success<out T>(val data: T) : Response<T>() {

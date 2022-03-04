@@ -4,15 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.melvin.ongandroid.data.repository.TestimonialsRepository
-import com.melvin.ongandroid.data.utils.DataState
-import com.melvin.ongandroid.data.utils.Response
+import com.melvin.ongandroid.data.repository.TestimonialRepository
+import com.melvin.ongandroid.view.utils.DataState
+import com.melvin.ongandroid.view.utils.Response
 import com.melvin.ongandroid.model.Testimonial
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-class TestimonialViewModel(private val repository: TestimonialsRepository) : ViewModel() {
+class TestimonialViewModel(private val repository: TestimonialRepository) : ViewModel() {
     val testimonials: LiveData<DataState<MutableList<Testimonial>>>
         get() = _testimonials
     private val _testimonials = MutableLiveData<DataState<MutableList<Testimonial>>>()

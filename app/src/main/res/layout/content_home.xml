@@ -14,18 +14,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/navTestimonialsFragment"
-        app:navGraph="@navigation/my_nav"
-        tools:layout_editor_absoluteX="-205dp"
-        tools:layout_editor_absoluteY="0dp" />
-    <fragment
-        android:id="@+id/navTestimonialsFragment"
-        android:name="com.melvin.ongandroid.view.testimonial.TestimonialsFragment"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/navHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+ />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

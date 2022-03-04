@@ -1,7 +1,13 @@
-package com.melvin.ongandroid.utils
+package com.melvin.ongandroid.view.utils
 
 import java.util.regex.Pattern
 
+/**
+ * Clase para validar entrada de datos
+ * Contiene metodo para validacion de email y password
+ *
+ * @author Martin Re
+ */
 class Validator {
     companion object {
         private const val EMAIL_PATTERN =
