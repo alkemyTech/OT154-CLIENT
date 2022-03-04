@@ -3,7 +3,7 @@ package com.melvin.ongandroid.model.repository
 
 
 import com.melvin.ongandroid.model.apimodel.ActivityModel
-import com.melvin.ongandroid.model.network.SlideModelService
+import com.melvin.ongandroid.model.apiservice.network.SlideModelService
 
 
 
