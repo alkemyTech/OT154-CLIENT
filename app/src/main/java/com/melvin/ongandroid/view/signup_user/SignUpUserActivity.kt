@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.ActivitySignUpUserBinding
-import com.melvin.ongandroid.view.UserRegisterView.SignUpUserViewModel
 import android.text.Editable
 import android.text.TextWatcher
 
