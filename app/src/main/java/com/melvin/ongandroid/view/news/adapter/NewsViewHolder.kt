@@ -8,7 +8,7 @@ import com.melvin.ongandroid.model.apiservice.NewsResponse
 
 class NewsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    val binding = ItemNewsBinding.bind(view)
+    private val binding = ItemNewsBinding.bind(view)
 
     fun render(news: NewsResponse) {
         binding.title.text = news.name
