@@ -18,7 +18,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
-import org.imaginativeworld.whynotimagecarousel.CarouselItem
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -79,8 +79,8 @@ class HomeViewModelFakeTest{
     fun `when list activities is not empty, set and load carousel`() = runTest {
 
         val carouselist :List<CarouselItem> = listOf(
-            CarouselItem("https://imagemusica.jpg", null, "CLASE DE MUSICA"),
-            CarouselItem("https://imagearte.jpg", null, "CLASE DE ARTE")
+            CarouselItem("https://imagemusica.jpg", "CLASE DE MUSICA" ),
+            CarouselItem("https://imagearte.jpg", "CLASE DE ARTE" )
         )
 
         coEvery { interactor() } returns getListActivitiesFromInteractor()
