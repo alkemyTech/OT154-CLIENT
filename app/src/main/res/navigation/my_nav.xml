@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/navFragmentContactUs">
+    app:startDestination="@id/navFragmentHome">
 
     <fragment
         android:id="@+id/navFragmentAboutUs"
@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_about_us" />
     <fragment
         android:id="@+id/navFragmentActivities"
-        android:name="com.melvin.ongandroid.view.Activities"
+        android:name="com.melvin.ongandroid.view.activity.Activities"
         android:label="Actividades"
         tools:layout="@layout/fragment_activities" />
     <fragment
@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navFragmentNews"
-        android:name="com.melvin.ongandroid.view.News"
+        android:name="com.melvin.ongandroid.view.news.NewsFragment"
         android:label="Novedades"
         tools:layout="@layout/fragment_news" />
     <fragment

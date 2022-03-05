@@ -1,6 +1,5 @@
 package com.melvin.ongandroid.model
 
-import com.melvin.ongandroid.data.apiservice.APIService
 import com.melvin.ongandroid.data.apiservice.Retrofit2
 import retrofit2.Call
 import retrofit2.Callback

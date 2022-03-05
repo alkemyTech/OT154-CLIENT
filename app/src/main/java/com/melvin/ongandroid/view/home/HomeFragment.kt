@@ -1,5 +1,6 @@
 package com.melvin.ongandroid.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.FragmentHomeBinding
+import com.melvin.ongandroid.view.news.NewsFragment
 import com.melvin.ongandroid.viewmodel.HomeViewModel
 
 
@@ -20,6 +22,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
         init()
+        moreNews()
+
     }
 
     /*Funcion inicializadora, que toma en conjunto las funciones necesarias para el Fragment.
@@ -39,7 +43,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
      */
 
     private fun setCarrouselObserver() {
-        viewModel.activities.observe(viewLifecycleOwner) { activities ->
+        viewModel.activities.observe(viewLifecycleOwner) { activities  ->
             binding.carousel.addData(activities)
             binding.lastestNewsCarousel.addData(viewModel.addItems())
 
@@ -65,4 +69,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onResume()
         viewModel.getListActivities()
     }
+
+    //Funcion que al realizar click cobre el boton "Ver mas" nos dirige al fragment News - Valderas Leandro
+    private fun moreNews() {
+        binding.btnMoreNews.setOnClickListener {
+            val intent = Intent(requireContext(), NewsFragment::class.java)
+            startActivity(intent)
+        }
+
+    }
+
 }
