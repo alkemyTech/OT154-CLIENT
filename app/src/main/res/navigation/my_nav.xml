@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navFragmentNews"
-        android:name="com.melvin.ongandroid.view.News"
+        android:name="com.melvin.ongandroid.view.news.News"
         android:label="Novedades"
         tools:layout="@layout/fragment_news" />
     <fragment

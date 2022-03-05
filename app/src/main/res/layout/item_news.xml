@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="38sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/imgNews"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Hola, soy un titulo" />
+
+    <ImageView
+        android:id="@+id/imgNews"
+        android:layout_width="350dp"
+        android:layout_height="160dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgNews"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam felis, aliquet ut lectus at, mollis ultricies elit. Proin consequat magna non lacinia viverra. Vivamus nec ligula eu massa ullamcorper tempor." />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

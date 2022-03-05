@@ -1,4 +1,4 @@
-package com.melvin.ongandroid.view
+package com.melvin.ongandroid.view.news
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
