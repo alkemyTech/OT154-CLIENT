@@ -9,7 +9,7 @@ class APITestimonialManager {
         return getRetrofitInstance().getTestimonials()
     }
 
-    private fun getRetrofitInstance(): APITestimonialService {
-        return Retrofit2.getRetrofit().create(APITestimonialService::class.java)
+    private fun getRetrofitInstance(): APIService {
+        return Retrofit2.getRetrofit().create(APIService::class.java)
     }
 }

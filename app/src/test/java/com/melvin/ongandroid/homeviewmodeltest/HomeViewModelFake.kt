@@ -13,7 +13,7 @@ import androidx.lifecycle.viewModelScope
 import com.melvin.ongandroid.businesslogic.GetActivitiesInteractor
 import com.melvin.ongandroid.model.apimodel.ActivityModel
 import kotlinx.coroutines.launch
-import org.imaginativeworld.whynotimagecarousel.CarouselItem
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 class HomeViewModelFake : ViewModel() {
     private lateinit var getActivitiesInteractor: GetActivitiesInteractor
@@ -41,8 +41,8 @@ class HomeViewModelFake : ViewModel() {
                 for (activity in activitiesInteractor) {
                     carouselList.add(
                         CarouselItem(
-                            activity.image, null,
-                            activity.name.uppercase()
+                            activity.image, activity.name.uppercase()
+
                         )
                     )
                 }
