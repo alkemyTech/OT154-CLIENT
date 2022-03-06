@@ -8,7 +8,6 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface APIService {
-
     //Tomamos informacion desde testimonios en la API - Leandro Valderas
     @GET("api/testimonials")
     suspend fun getTestimonials(): ResponseApi<MutableList<Testimonial>>
