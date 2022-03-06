@@ -65,12 +65,12 @@
                 android:layout_marginEnd="10dp"
                 android:padding="1dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textfield_lastname_fragment_contact_us"
+                    android:id="@+id/textfield_phone_fragment_contact_us"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="26sp"
                     android:inputType="text"
-                    android:hint="@string/string_lastname_textfield_fragment_contactus">
+                    android:hint="@string/string_phone_textfield_fragment_contactus">
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>

@@ -40,12 +40,12 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
             textfieldQuestionFragmentContactUs.addTextChangedListener(textWatcher)
             textfieldEmailFragmentContactUs.addTextChangedListener(textWatcher)
             textfieldFirstnameFragmentContactUs.addTextChangedListener(textWatcher)
-            textfieldLastnameFragmentContactUs.addTextChangedListener(textWatcher)
+            textfieldPhoneFragmentContactUs.addTextChangedListener(textWatcher)
         }
         binding.textfieldQuestionFragmentContactUs.addTextChangedListener(textWatcher)
         binding.textfieldEmailFragmentContactUs.addTextChangedListener(textWatcher)
         binding.textfieldFirstnameFragmentContactUs.addTextChangedListener(textWatcher)
-        binding.textfieldLastnameFragmentContactUs.addTextChangedListener(textWatcher)
+        binding.textfieldPhoneFragmentContactUs.addTextChangedListener(textWatcher)
 
     }
 
@@ -59,7 +59,7 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             val txtEmail = binding.textfieldEmailFragmentContactUs.text.toString().trim()
             val txtName = binding.textfieldFirstnameFragmentContactUs.text.toString().trim()
-            val txtLastName = binding.textfieldLastnameFragmentContactUs.text.toString().trim()
+            val txtLastName = binding.textfieldPhoneFragmentContactUs.text.toString().trim()
             val txtQuestions = binding.textfieldQuestionFragmentContactUs.text.toString().trim()
 
             buttonSubmitIsEnabled(txtEmail.isNotEmpty() && Validator.isEmailValid(txtEmail) && txtName.isNotEmpty() && txtLastName.isNotEmpty() && txtQuestions.isNotEmpty())
@@ -126,7 +126,7 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
     private fun cleanComponents() {
         with(binding) {
             textfieldFirstnameFragmentContactUs.setText("")
-            textfieldLastnameFragmentContactUs.setText("")
+            textfieldPhoneFragmentContactUs.setText("")
             textfieldEmailFragmentContactUs.setText("")
             textfieldQuestionFragmentContactUs.setText("")
         }

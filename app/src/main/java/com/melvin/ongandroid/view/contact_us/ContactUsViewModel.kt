@@ -28,6 +28,7 @@ class ContactUsViewModel(private val repository: ContactRepository) : ViewModel(
                     }
                     is Response.Success -> {
                         _contacts.value = DataState.Success(it.data.data)
+
                     }
                     is Response.Error -> {
                         _contacts.value = DataState.Loading(loading = false)

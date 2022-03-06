@@ -9,7 +9,7 @@ import com.melvin.ongandroid.model.apiservice.apimodel.NewUserResponse
 import retrofit2.http.*
 
 
-interface APITestimonialService {
+interface APIService {
     //Tomamos informacion desde testimonios en la API - Leandro Valderas
     @GET( "api/testimonials")
     suspend fun getTestimonials(): ResponseApi<MutableList<Testimonial>>

@@ -17,6 +17,11 @@ class RetrofitInstance {
 }
 
 
+/*}
+
+
+>>>>>>> 7aee8908a915b8f0b3d5eb3e503b7d6bec05e81e
+
 private fun getOkHttpClient(): OkHttpClient {
     var interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor()
     interceptor.level = HttpLoggingInterceptor.Level.BASIC
@@ -26,6 +31,9 @@ private fun getOkHttpClient(): OkHttpClient {
 
     return client.build()
 
+<<<<<<< HEAD
 }
+=======
+    }*/
 
 
