@@ -41,7 +41,7 @@ import java.util.*
 //import java.net.ResponseCache
 //
 //@ExperimentalCoroutinesApi
-//class ContactUsViewModelTest {
+class ContactUsViewModelTest {
 //
 //    @RelaxedMockK
 //    private lateinit var repository: ContactRepository
@@ -83,63 +83,63 @@ import java.util.*
 ////        assert(listOfContacts.first() == contactUsViewModel.contacts.value)
 //    }
 //}
-@ExperimentalCoroutinesApi
-class ContactUsViewModelTest {
-    @get:Rule
-    val instantExecutorRule = InstantTaskExecutorRule()
-
-    private lateinit var viewModel: ContactUsViewModel
-
-    @MockK
-    lateinit var repository: ContactRepository
-
-    @RelaxedMockK
-    lateinit var contactStateObserver: Observer<DataState<Contact>>
-
-
-    private val testDispatcher = TestCoroutineDispatcher()
-
-    private lateinit var lifeCycleTestOwner: LifeCycleTestOwner
-
-    @Before
-    fun setUp() {
-        MockKAnnotations.init(this)
-        Dispatchers.setMain(testDispatcher)
-        lifeCycleTestOwner = LifeCycleTestOwner()
-        lifeCycleTestOwner.onCreate()
-        viewModel = ContactUsViewModel(
-            repository
-        )
-        viewModel.contacts.observe(lifeCycleTestOwner, contactStateObserver)
-    }
-
-    @Test
-    fun `save contats test, when is called, then return success flow`() =
-        testDispatcher.runBlockingTest {
-
-            // GIVEN
-            lifeCycleTestOwner.onResume()
-
-
-            val contact = mockk<Contact>(relaxed = true)
-
-            coEvery { repository.saveContact(contact) } returns
-                    flowOf(
-                        Response.Loading,
-                        Response.Success(data = contact),
-                    )
-
-            // WHEN
-            viewModel.saveContact(contact)
-
-            // THEN
-            coVerify(exactly = 1) { repository.saveContact(contact) }
-
-
-            verifyOrder {
-                contactsStateObserver.onChanged(DataState.Idle)
-                contactsStateObserver.onChanged(DataState.Loading(true))
-                contactsStateObserver.onChanged(DataState.Success(response.data))
-            }
-        }
+//@ExperimentalCoroutinesApi
+//class ContactUsViewModelTest {
+//    @get:Rule
+//    val instantExecutorRule = InstantTaskExecutorRule()
+//
+//    private lateinit var viewModel: ContactUsViewModel
+//
+//    @MockK
+//    lateinit var repository: ContactRepository
+//
+//    @RelaxedMockK
+//    lateinit var contactStateObserver: Observer<DataState<Contact>>
+//
+//
+//    private val testDispatcher = TestCoroutineDispatcher()
+//
+//    private lateinit var lifeCycleTestOwner: LifeCycleTestOwner
+//
+//    @Before
+//    fun setUp() {
+//        MockKAnnotations.init(this)
+//        Dispatchers.setMain(testDispatcher)
+//        lifeCycleTestOwner = LifeCycleTestOwner()
+//        lifeCycleTestOwner.onCreate()
+//        viewModel = ContactUsViewModel(
+//            repository
+//        )
+//        viewModel.contacts.observe(lifeCycleTestOwner, contactStateObserver)
+//    }
+//
+//    @Test
+//    fun `save contats test, when is called, then return success flow`() =
+//        testDispatcher.runBlockingTest {
+//
+//            // GIVEN
+//            lifeCycleTestOwner.onResume()
+//
+//
+//            val contact = mockk<Contact>(relaxed = true)
+//
+//            coEvery { repository.saveContact(contact) } returns
+//                    flowOf(
+//                        Response.Loading,
+//                        Response.Success(data = contact),
+//                    )
+//
+//            // WHEN
+//            viewModel.saveContact(contact)
+//
+//            // THEN
+//            coVerify(exactly = 1) { repository.saveContact(contact) }
+//
+//
+//            verifyOrder {
+//                contactsStateObserver.onChanged(DataState.Idle)
+//                contactsStateObserver.onChanged(DataState.Loading(true))
+//                contactsStateObserver.onChanged(DataState.Success(response.data))
+//            }
+//        }
 }

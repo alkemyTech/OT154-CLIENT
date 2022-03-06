@@ -7,6 +7,8 @@ import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.FragmentHomeBinding
 import com.melvin.ongandroid.view.news.NewsFragment
@@ -43,7 +45,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
      */
 
     private fun setCarrouselObserver() {
-        viewModel.activities.observe(viewLifecycleOwner) { activities  ->
+        viewModel.activities.observe(viewLifecycleOwner) { activities ->
             binding.carousel.addData(activities)
             binding.lastestNewsCarousel.addData(viewModel.addItems())
 
@@ -61,7 +63,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 binding.btnRetry.isVisible = true
                 binding.textviewError.isVisible = true
             }
-
         }
     }
 
@@ -71,20 +72,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     //Funcion que al realizar click cobre el boton "Ver mas" nos dirige al fragment News - Valderas Leandro
-    @SuppressLint("RestrictedApi")
     private fun moreNews() {
         binding.btnMoreNews.setOnClickListener {
-            val nextFrag = NewsFragment()
-            requireActivity().supportFragmentManager.openTransaction()
-                .replace(R.id.news, nextFrag, "newsFragment")
-                .addToBackStack(null)
-                .commit()
-//            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-//            transaction.replace(R.id.content_home, NewsFragment())
-//            transaction.disallowAddToBackStack()
-//            transaction.commit()
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToNewsFragment()
+            )
         }
-
     }
 
 }

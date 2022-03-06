@@ -12,14 +12,18 @@
         tools:layout="@layout/fragment_about_us" />
     <fragment
         android:id="@+id/navFragmentActivities"
-        android:name="com.melvin.ongandroid.view.activity.Activities"
+        android:name="com.melvin.ongandroid.view.activity.ActivitiesFragment"
         android:label="Actividades"
         tools:layout="@layout/fragment_activities" />
     <fragment
         android:id="@+id/navFragmentHome"
         android:name="com.melvin.ongandroid.view.home.HomeFragment"
         android:label="Inicio"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newsFragment"
+            app:destination="@id/navFragmentNews" />
+    </fragment>
     <fragment
         android:id="@+id/navFragmentNews"
         android:name="com.melvin.ongandroid.view.news.NewsFragment"
