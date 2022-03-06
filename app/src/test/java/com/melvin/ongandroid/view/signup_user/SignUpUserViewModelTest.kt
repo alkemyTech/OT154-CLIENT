@@ -17,62 +17,62 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class SignUpUserViewModelTest : TestCase(), LifecycleOwner {
+//class SignUpUserViewModelTest : TestCase(), LifecycleOwner {
 
-    @get:Rule
-        val instantExecutorRule = InstantTaskExecutorRule()
-
-    private lateinit var signUpUserViewModel: SignUpUserViewModel
-   @RelaxedMockK
-    private lateinit var booleanObserver: Observer<Boolean>
-    private val registry = LifecycleRegistry(this)
-    private val testDispatcher = TestCoroutineDispatcher()
-
-
-    @Before
-    override fun setUp() {
-        super.setUp()
-        MockKAnnotations.init(this)
-        Dispatchers.setMain(testDispatcher)
-
-        signUpUserViewModel = SignUpUserViewModel()
-       // onCreate()
-        signUpUserViewModel.buttonRegisterIsEnabled.observeForever(booleanObserver)
-
-    }
-
-    override fun getLifecycle(): Lifecycle {
-        return registry
-    }
-
-    fun onCreate() {
-        registry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    }
-
-    fun onResume() {
-        registry.handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    }
-
-    fun onDestroy() {
-        registry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    }
-
-    @Test
-    fun testButtonRegisterIsEnabledWhenNameIsEmptyReturnFalse() = testDispatcher.runBlockingTest {
-        //onResume()
-        signUpUserViewModel.validateButtonRegister("", EMAIL, PASS, PASS_CONFIRM)
-        verifyOrder { booleanObserver.onChanged(false)
-        }
-    }
-
-
-    companion object {
-        const val EMAIL = "email"
-        const val NAME = "name"
-        const val PASS = "pass"
-        const val PASS_CONFIRM = "pass"
-
-    }
+//    @get:Rule
+//        val instantExecutorRule = InstantTaskExecutorRule()
+//
+//    private lateinit var signUpUserViewModel: SignUpUserViewModel
+//   @RelaxedMockK
+//    private lateinit var booleanObserver: Observer<Boolean>
+//    private val registry = LifecycleRegistry(this)
+//    private val testDispatcher = TestCoroutineDispatcher()
+//
+//
+//    @Before
+//    override fun setUp() {
+//        super.setUp()
+//        MockKAnnotations.init(this)
+//        Dispatchers.setMain(testDispatcher)
+//
+//        signUpUserViewModel = SignUpUserViewModel()
+//       // onCreate()
+//        signUpUserViewModel.buttonRegisterIsEnabled.observeForever(booleanObserver)
+//
+//    }
+//
+//    override fun getLifecycle(): Lifecycle {
+//        return registry
+//    }
+//
+//    fun onCreate() {
+//        registry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE)
+//    }
+//
+//    fun onResume() {
+//        registry.handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
+//    }
+//
+//    fun onDestroy() {
+//        registry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+//    }
+//
+//    @Test
+//    fun testButtonRegisterIsEnabledWhenNameIsEmptyReturnFalse() = testDispatcher.runBlockingTest {
+//        //onResume()
+//        signUpUserViewModel.validateButtonRegister("", EMAIL, PASS, PASS_CONFIRM)
+//        verifyOrder { booleanObserver.onChanged(false)
+//        }
+//    }
+//
+//
+//    companion object {
+//        const val EMAIL = "email"
+//        const val NAME = "name"
+//        const val PASS = "pass"
+//        const val PASS_CONFIRM = "pass"
+//
+//    }
 
 //    @ExperimentalCoroutinesApi
 //    class ContactUsViewModelTest {
@@ -134,5 +134,5 @@ class SignUpUserViewModelTest : TestCase(), LifecycleOwner {
 //                }
 //            }
 //    }
-}
+//}
 
