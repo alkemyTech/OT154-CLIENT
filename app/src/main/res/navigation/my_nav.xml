@@ -47,7 +47,7 @@
         tools:layout="@layout/fragment_donate" />
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.melvin.ongandroid.view.LogInFragment"
+        android:name="com.melvin.ongandroid.view.login.LogInFragment"
         android:label="log_in"
         tools:layout="@layout/log_in" />
 </navigation>
