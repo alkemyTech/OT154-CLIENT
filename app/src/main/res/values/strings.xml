@@ -46,7 +46,7 @@
     <!-- FragmentContactUs -->
     <string name="string_firstname_textfield_fragment_contactus">Nombre</string>
     <string name="string_title_text_view_fragment_contactus">Contactate con nosotros</string>
-    <string name="string_lastname_textfield_fragment_contactus">Apellido</string>
+    <string name="string_phone_textfield_fragment_contactus">Telefono</string>
     <string name="string_email_textfield_fragment_contactus">Email</string>
     <string name="string_button_fragment_contactus">Enviar</string>
     <string name="string_question_textfield_fragment_contactus">Escribe tu consulta</string>

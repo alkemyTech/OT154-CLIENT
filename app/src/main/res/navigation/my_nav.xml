@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navFragmentNews"
-        android:name="com.melvin.ongandroid.view.News"
+        android:name="com.melvin.ongandroid.view.news.NewsFragment"
         android:label="Novedades"
         tools:layout="@layout/fragment_news" />
     <fragment
@@ -45,4 +45,9 @@
         android:name="com.melvin.ongandroid.view.Donate"
         android:label="Contribuye"
         tools:layout="@layout/fragment_donate" />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.melvin.ongandroid.view.login.LogInFragment"
+        android:label="log_in"
+        tools:layout="@layout/log_in" />
 </navigation>
