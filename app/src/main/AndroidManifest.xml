@@ -21,7 +21,8 @@
 
         <activity
             android:name=".view.news.NewsFragment"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
 
         <activity
             android:name=".view.signup_user.SignUpUserActivity"
@@ -46,7 +47,6 @@
             android:name=".businesslogic.MyFirebaseMessagingService"
             android:exported="false"
             tools:ignore="Instantiatable">
-
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

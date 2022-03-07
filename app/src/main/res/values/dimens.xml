@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- default -->
+    <!-- FragmentContactUs -->
     <dimen name="size_textview_title_fragment_contactus">14sp</dimen>
     <dimen name="size_textfield_fragment_contactus">13sp</dimen>
+    <dimen name="padding_main_constraint_layout_fragment_contactus">2dp</dimen>
 </resources>
