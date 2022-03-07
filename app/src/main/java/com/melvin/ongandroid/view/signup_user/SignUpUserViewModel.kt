@@ -10,7 +10,7 @@ class SignUpUserViewModel : ViewModel() {
 
     private val _buttonRegisterIsEnabled: MutableLiveData<Boolean> = MutableLiveData()
     val buttonRegisterIsEnabled: LiveData<Boolean> = _buttonRegisterIsEnabled
-    private val _errorMsgIsEnabled: MutableLiveData<Boolean> = MutableLiveData()
+        private val _errorMsgIsEnabled: MutableLiveData<Boolean> = MutableLiveData()
     val errorMsgIsEnabled: LiveData<Boolean> = _errorMsgIsEnabled
 
 

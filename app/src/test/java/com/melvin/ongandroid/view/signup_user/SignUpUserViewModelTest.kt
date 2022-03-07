@@ -1,78 +1,89 @@
 package com.melvin.ongandroid.view.signup_user
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LifecycleRegistry
-import androidx.lifecycle.Observer
+import androidx.lifecycle.*
 import io.mockk.MockKAnnotations
-import io.mockk.coVerify
 import io.mockk.impl.annotations.RelaxedMockK
+import io.mockk.mockk
 import io.mockk.verifyOrder
 import junit.framework.TestCase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.invoke
 import kotlinx.coroutines.test.*
+import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-//class SignUpUserViewModelTest : TestCase(), LifecycleOwner {
+class SignUpUserViewModelTest : TestCase(), LifecycleOwner {
 
-//    @get:Rule
-//        val instantExecutorRule = InstantTaskExecutorRule()
-//
-//    private lateinit var signUpUserViewModel: SignUpUserViewModel
-//   @RelaxedMockK
-//    private lateinit var booleanObserver: Observer<Boolean>
-//    private val registry = LifecycleRegistry(this)
-//    private val testDispatcher = TestCoroutineDispatcher()
-//
-//
-//    @Before
-//    override fun setUp() {
-//        super.setUp()
-//        MockKAnnotations.init(this)
+
+
+    @RelaxedMockK
+    private var _buttonRegisterIsEnabled: MutableLiveData<Boolean> = MutableLiveData()
+    @RelaxedMockK
+    private val _errorMsgIsEnabled: MutableLiveData<Boolean> = MutableLiveData()
+
+
+    private lateinit var signUpUserViewModel: SignUpUserViewModel
+    private lateinit var booleanObserver: Observer<Boolean>
+    private val registry = LifecycleRegistry(this)
+
+    @get:Rule
+    var rule:InstantTaskExecutorRule = InstantTaskExecutorRule()
+
+    @Before
+    override fun setUp() {
+        super.setUp()
+        MockKAnnotations.init(this)
 //        Dispatchers.setMain(testDispatcher)
-//
-//        signUpUserViewModel = SignUpUserViewModel()
-//       // onCreate()
-//        signUpUserViewModel.buttonRegisterIsEnabled.observeForever(booleanObserver)
-//
-//    }
-//
-//    override fun getLifecycle(): Lifecycle {
-//        return registry
-//    }
-//
-//    fun onCreate() {
-//        registry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE)
-//    }
-//
-//    fun onResume() {
-//        registry.handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
-//    }
-//
-//    fun onDestroy() {
-//        registry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-//    }
-//
-//    @Test
-//    fun testButtonRegisterIsEnabledWhenNameIsEmptyReturnFalse() = testDispatcher.runBlockingTest {
-//        //onResume()
-//        signUpUserViewModel.validateButtonRegister("", EMAIL, PASS, PASS_CONFIRM)
-//        verifyOrder { booleanObserver.onChanged(false)
-//        }
-//    }
-//
-//
-//    companion object {
-//        const val EMAIL = "email"
-//        const val NAME = "name"
-//        const val PASS = "pass"
-//        const val PASS_CONFIRM = "pass"
-//
-//    }
+
+        Dispatchers.setMain(Dispatchers.Unconfined)
+        signUpUserViewModel = SignUpUserViewModel()
+    }
+
+
+    @After
+    fun onAfter() {
+        Dispatchers.resetMain()
+    }
+
+    override fun getLifecycle(): Lifecycle {
+        return registry
+    }
+
+    fun onCreate() {
+        registry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    }
+
+    fun onResume() {
+        registry.handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    }
+
+    fun onDestroy() {
+        registry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    }
+
+    @Test
+    fun testButtonRegisterIsEnabledWhenNameIsEmptyReturnFalse() = runTest {
+        signUpUserViewModel.validateButtonRegister("", EMAIL, PASS, PASS_CONFIRM)
+        signUpUserViewModel.buttonRegisterIsEnabled.apply {
+            observeForever(booleanObserver)
+        }
+        verifyOrder {
+            booleanObserver.onChanged(false)
+
+
+        }
+    }
+
+
+    companion object {
+        const val EMAIL = "email"
+        const val NAME = "name"
+        const val PASS = "pass"
+        const val PASS_CONFIRM = "pass"
+
+    }
 
 //    @ExperimentalCoroutinesApi
 //    class ContactUsViewModelTest {
@@ -134,5 +145,5 @@ import org.junit.Test
 //                }
 //            }
 //    }
-//}
+}
 
