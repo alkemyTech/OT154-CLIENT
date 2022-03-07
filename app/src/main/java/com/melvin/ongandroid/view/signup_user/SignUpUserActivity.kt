@@ -8,16 +8,18 @@ import com.melvin.ongandroid.databinding.ActivitySignUpUserBinding
 import com.melvin.ongandroid.view.UserRegisterView.SignUpUserViewModel
 import android.text.Editable
 import android.text.TextWatcher
+import com.melvin.ongandroid.view.ProgressActivity
 
-class SignUpUserActivity : AppCompatActivity() {
+class SignUpUserActivity : ProgressActivity() {
     private lateinit var binding: ActivitySignUpUserBinding
     private val viewModel by viewModels<SignUpUserViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         buttonRegisterIsEnabled(false)
+
+
 
         binding.textFieldFirstNameUserRegisterView.addTextChangedListener(signUpTextWatcher())
         binding.textFieldLastNameUserRegisterView.addTextChangedListener(signUpTextWatcher())
@@ -35,9 +37,16 @@ class SignUpUserActivity : AppCompatActivity() {
         }
     }
 
+
     private fun signUpTextWatcher(): TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
+        }
+
+        private fun initializeComponents() {
+            with(binding) {
+                attachLoadingProgressBar(root)
+            }
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -75,6 +84,7 @@ class SignUpUserActivity : AppCompatActivity() {
 
     }
 
+
     private fun setObserver() {
         viewModel.buttonRegisterIsEnabled.observe(this, { b ->
             buttonRegisterIsEnabled(b)
@@ -83,6 +93,11 @@ class SignUpUserActivity : AppCompatActivity() {
         viewModel.errorMsgIsEnabled.observe(this, { e ->
             setErrorMsg(e)
         })
+
+        viewModel.progressBarStatus.observe(this) {
+            setCustomProgressBarVisibility(it)
+        }
+
 
 
         class SignUpUserActivity : AppCompatActivity() {
