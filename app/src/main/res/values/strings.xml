@@ -56,7 +56,7 @@
     <string name="ok_button">Aceptar</string>
 
     <!---UserRegisterView-->
-    <string name="string_first_name_user_register_view">Nombre</string>
+    <string name="string_first_name_user_register_view">Usuario</string>
     <string name="string_last_name_user_register_view">Apellido</string>
     <string name="string_email_user_register_view">Email</string>
     <string name="string_password_user_register_view">Contraseña</string>

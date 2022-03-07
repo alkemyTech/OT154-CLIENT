@@ -51,50 +51,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/linear_layout_container_first_and_last_name_fields_user_register_view"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_input_layout_username_register_view"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    android:layout_marginEnd="1dp"
+                    android:padding="1dp">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/text_input_layout_first_name_user_register_view"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="0dp"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/text_field_username_register_view"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="1dp"
-                        android:layout_weight="1"
-                        android:padding="1dp">
+                        android:hint="@string/string_first_name_user_register_view"
+                        android:inputType="text" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/text_field_first_name_user_register_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/string_first_name_user_register_view"
-                            android:inputType="text" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/text_input_layout_last_name_user_register_view"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="1dp"
-                        android:layout_weight="1"
-                        android:padding="1dp">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/text_field_last_name_user_register_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/string_last_name_user_register_view"
-                            android:inputType="text" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -102,7 +74,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/linear_layout_container_first_and_last_name_fields_user_register_view"
+                    android:layout_below="@+id/text_input_layout_username_register_view"
                     android:padding="1dp">
 
                     <com.google.android.material.textfield.TextInputEditText

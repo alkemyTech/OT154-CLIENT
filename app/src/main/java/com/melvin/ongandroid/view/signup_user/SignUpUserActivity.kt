@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.ActivitySignUpUserBinding
-import com.melvin.ongandroid.view.UserRegisterView.SignUpUserViewModel
 import android.text.Editable
 import android.text.TextWatcher
 import com.melvin.ongandroid.view.ProgressActivity
@@ -23,6 +22,7 @@ class SignUpUserActivity : ProgressActivity() {
 
         binding.textFieldFirstNameUserRegisterView.addTextChangedListener(signUpTextWatcher())
         binding.textFieldLastNameUserRegisterView.addTextChangedListener(signUpTextWatcher())
+        binding.textFieldUsernameRegisterView.addTextChangedListener(signUpTextWatcher())
         binding.textFieldEmailUserRegisterView.addTextChangedListener(signUpTextWatcher())
         binding.textFieldPasswordUserRegisterView.addTextChangedListener(signUpTextWatcher())
         binding.textFieldConfirmPasswordUserRegisterView.addTextChangedListener(signUpTextWatcher())
@@ -33,7 +33,7 @@ class SignUpUserActivity : ProgressActivity() {
             val username = "TO-DO"
             val email = binding.textFieldEmailUserRegisterView.text.toString().trim()
             val password = binding.textFieldPasswordUserRegisterView.text.toString().trim()
-            viewModel.registerNewUser(username, email, password, this)
+            //viewModel.registerNewUser(username, email, password, this)
         }
     }
 
@@ -50,15 +50,13 @@ class SignUpUserActivity : ProgressActivity() {
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            val firstname = binding.textFieldFirstNameUserRegisterView.text.toString().trim()
-            val lastName = binding.textFieldLastNameUserRegisterView.text.toString().trim()
+            val userName = binding.textFieldUsernameRegisterView.text.toString().trim()
             val email = binding.textFieldEmailUserRegisterView.text.toString().trim()
             val password = binding.textFieldPasswordUserRegisterView.text.toString().trim()
-            val confirmPass =
-                binding.textFieldConfirmPasswordUserRegisterView.text.toString().trim()
+            val confirmPass = binding.textFieldConfirmPasswordUserRegisterView.text.toString().trim()
 
             viewModel.validateButtonRegister(
-                firstname, lastName, email,
+                userName, email,
                 password, confirmPass
             )
 
