@@ -3,133 +3,144 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.contact_us.ContactUs"
+    android:padding="@dimen/padding_main_constraint_layout_fragment_contactus">
 
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:padding="20dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent=".96">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textview_title_fragment_contact_us"
+        <include
+            android:id="@+id/i_progress_bar"
+            layout="@layout/loading" />
+
+        <include
+            android:id="@+id/i_generic_error"
+            layout="@layout/generic_error" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textview_title_fragment_contact_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/string_title_text_view_fragment_contactus"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_textview_title_fragment_contactus"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_firstname_contactus"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        app:layout_constraintEnd_toStartOf="@+id/text_input_layout_phone_contactus"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_title_fragment_contact_us">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textfield_firstname_fragment_contact_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="@string/string_title_text_view_fragment_contactus"
-            android:textColor="@color/black"
-            android:textSize="@dimen/size_textview_title_fragment_contactus"
-            android:textStyle="bold"></TextView>
+            android:hint="@string/string_firstname_textfield_fragment_contactus"
+            android:inputType="text"
+            android:textSize="@dimen/size_textfield_fragment_contactus" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:id="@+id/linear_layout_contains_textfield"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_phone_contactus"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/text_input_layout_firstname_contactus"
+        app:layout_constraintTop_toBottomOf="@+id/textview_title_fragment_contact_us">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textfield_phone_fragment_contact_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textview_title_fragment_contact_us"
-            android:layout_marginBottom="20dp"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
+            android:hint="@string/string_phone_textfield_fragment_contactus"
+            android:inputType="phone"
+            android:textSize="@dimen/size_textfield_fragment_contactus" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_layout_firstname_contactus"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:padding="1dp">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_email_contactus"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_firstname_contactus">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textfield_firstname_fragment_contact_us"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:hint="@string/string_firstname_textfield_fragment_contactus"
-                    android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_layout_lastname_contactus"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:padding="1dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textfield_phone_fragment_contact_us"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:hint="@string/string_phone_textfield_fragment_contactus"
-                    android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_input_layout_email_contactus"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textfield_email_fragment_contact_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linear_layout_contains_textfield"
-            android:layout_marginBottom="20dp"
-            android:padding="1dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textfield_email_fragment_contact_us"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:hint="@string/string_email_textfield_fragment_contactus"
-                android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:hint="@string/string_email_textfield_fragment_contactus"
+            android:inputType="text"
+            android:textSize="@dimen/size_textfield_fragment_contactus" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_question_contactus"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_bottom_question_fragment_contactus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_email_contactus">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_input_layout_question_contactus"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textfield_question_fragment_contact_us"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/button_submit_fragment_contactus"
-            android:layout_below="@id/text_input_layout_email_contactus"
-            android:layout_marginBottom="20dp"
-            android:padding="1dp">
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:hint="@string/string_question_textfield_fragment_contactus"
+            android:maxLines="30"
+            android:scrollbars="vertical"
+            android:textSize="@dimen/size_textfield_fragment_contactus" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textfield_question_fragment_contact_us"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="top"
-                android:hint="@string/string_question_textfield_fragment_contactus"
-                android:maxLines="30"
-                android:scrollbars="vertical"
-                android:textSize="@dimen/size_textfield_fragment_contactus"></com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_submit_fragment_contactus"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/light_blue_600"
-            android:text="@string/string_button_fragment_contactus"
-            android:textAllCaps="false"
-            android:textSize="@dimen/size_textfield_fragment_contactus"
-            android:layout_marginStart="2dp"></com.google.android.material.button.MaterialButton>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_question_fragment_contactus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60">
+    </androidx.constraintlayout.widget.Guideline>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_submit_fragment_contactus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_blue_600"
+        android:enabled="false"
+        android:text="@string/string_button_fragment_contactus"
+        android:textAllCaps="false"
+        android:textSize="@dimen/size_textfield_fragment_contactus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_bottom_question_fragment_contactus">
 
-    </RelativeLayout>
+    </com.google.android.material.button.MaterialButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

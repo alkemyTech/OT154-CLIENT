@@ -51,9 +51,10 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
 
     private val textWatcher = object : TextWatcher {
         override fun afterTextChanged(p0: Editable?) {
-            val txtEmail = binding.textfieldEmailFragmentContactUs.text.toString().trim()
+           /* val txtEmail = binding.textfieldEmailFragmentContactUs.text.toString().trim()
             if (!Validator.isEmailValid(txtEmail))
                 showToast(requireContext(), getString(R.string.invalid_email_text))
+                */
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
