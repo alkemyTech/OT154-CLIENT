@@ -14,12 +14,14 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
        // Hacemos que se detenga durante 5 segundos en esta activity - Autor: Leandro Valderas
         activityScope.launch {
             delay(5000)
-            var intent = Intent(this@SplashActivity, LoginActivity::class.java)
+            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
+
         }
     }
     //Agregamos el Toast al una vez finalice el Splash - Autor: Leandro Valderas
