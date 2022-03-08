@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.melvin.ongandroid.view.login.LoginActivity
 import kotlinx.coroutines.*
 
 class SplashActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
        // Hacemos que se detenga durante 5 segundos en esta activity - Autor: Leandro Valderas
         activityScope.launch {
             delay(5000)
-            var intent = Intent(this@SplashActivity, MainActivity::class.java)
+            var intent = Intent(this@SplashActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
