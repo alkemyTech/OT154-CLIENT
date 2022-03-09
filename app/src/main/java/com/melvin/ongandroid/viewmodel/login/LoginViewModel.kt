@@ -9,6 +9,11 @@ import com.melvin.ongandroid.data.login.repository.LoginRepository
 import com.melvin.ongandroid.model.login.LoginModel
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel para login
+ * @author Jose Luis Mora
+ */
+
 class LoginViewModel(private val repository: LoginRepository): ViewModel() {
 
     private val _loginResponse : MutableLiveData<ResourceLogin<LoginModel>> = MutableLiveData()

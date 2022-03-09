@@ -15,6 +15,11 @@ class Retrofit2 {
                 .build()
         }
 
+        /**
+         * Funcion que devuelve un objeto retrofit con cliente okhttp
+         * @author Jose Luis Mora
+         */
+
         fun<Api> buildApi( api: Class<Api>): Api
         {
             return Retrofit.Builder()

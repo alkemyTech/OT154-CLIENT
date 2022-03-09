@@ -13,6 +13,11 @@ import com.melvin.ongandroid.data.login.preferences.LoginUserPreferences
 import com.melvin.ongandroid.data.login.repository.LoginBaseRepository
 import com.melvin.ongandroid.viewmodel.login.base.LoginViewModelFactory
 
+/**
+ * Clase base ara creacion de fragment login, queda deprecado
+ * @author Jose Luis Mora
+ */
+
 abstract class BaseLoginFragment<VM: ViewModel, VB: ViewBinding, R: LoginBaseRepository>: Fragment() {
 
     protected lateinit var loginUserPreferences: LoginUserPreferences

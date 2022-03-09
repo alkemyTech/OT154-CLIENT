@@ -7,6 +7,11 @@ import com.melvin.ongandroid.data.login.repository.LoginRepository
 import com.melvin.ongandroid.viewmodel.login.LoginViewModel
 import java.lang.IllegalArgumentException
 
+/**
+ * Clase de viewModel Factory para proveeer viewmodel en la aplicacion
+ * @author Jose Luis Mora
+ */
+
 class LoginViewModelFactory(private val repository: LoginBaseRepository) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

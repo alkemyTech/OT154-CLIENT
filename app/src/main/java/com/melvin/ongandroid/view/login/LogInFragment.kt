@@ -17,6 +17,11 @@ import com.melvin.ongandroid.view.login.base.BaseLoginFragment
 import com.melvin.ongandroid.viewmodel.login.LoginViewModel
 import kotlinx.coroutines.launch
 
+/**
+ * Fragment del Login que extiende del base fragment login, queda obsoleto por que se utiliza una activity aparate
+ * @author Jose Luis Mora
+ */
+
 class LogInFragment: BaseLoginFragment<LoginViewModel, LogInBinding, LoginBaseRepository>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
