@@ -117,4 +117,8 @@ dependencies {
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kt_coroutines"
     testImplementation "androidx.arch.core:core-testing:2.1.0"
 
+    //Mockito
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+
 }
