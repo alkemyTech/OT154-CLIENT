@@ -19,6 +19,9 @@ import com.melvin.ongandroid.data.login.ResourceLogin
 import com.melvin.ongandroid.data.login.preferences.LoginUserPreferences
 import com.melvin.ongandroid.data.login.repository.LoginRepository
 import com.melvin.ongandroid.databinding.LogInBinding
+import com.melvin.ongandroid.view.ProgressActivity
+import com.melvin.ongandroid.view.UserRegisterView.SignUpUserViewModel
+import com.melvin.ongandroid.viewmodel.LoginViewModel
 import com.melvin.ongandroid.view.MainActivity
 import com.melvin.ongandroid.view.signup_user.SignUpUserActivity
 import com.melvin.ongandroid.view.utils.Validator
