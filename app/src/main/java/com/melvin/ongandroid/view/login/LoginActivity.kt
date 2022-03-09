@@ -15,13 +15,6 @@ import com.melvin.ongandroid.data.login.ResourceLogin
 import com.melvin.ongandroid.data.login.preferences.LoginUserPreferences
 import com.melvin.ongandroid.data.login.repository.LoginRepository
 import com.melvin.ongandroid.databinding.LogInBinding
-import com.melvin.ongandroid.view.ProgressActivity
-import com.melvin.ongandroid.view.UserRegisterView.SignUpUserViewModel
-import com.melvin.ongandroid.viewmodel.LoginViewModel
-
-class LoginActivity : ProgressActivity() {
-    private val viewModel by viewModels<LoginViewModel>()
-=======
 import com.melvin.ongandroid.view.MainActivity
 import com.melvin.ongandroid.view.signup_user.SignUpUserActivity
 import com.melvin.ongandroid.viewmodel.login.LoginViewModel
@@ -42,14 +35,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = LogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        attachLoadingProgressBar(binding.mainView)
-        setUpObservers()
-    }
-
-    private fun setUpObservers() {
-        viewModel.progressBarStatus.observe(this) {
-            setCustomProgressBarVisibility(it)
-
         loginUserPreferences = LoginUserPreferences(this)
 
         binding.btnSignUp.setOnClickListener {
