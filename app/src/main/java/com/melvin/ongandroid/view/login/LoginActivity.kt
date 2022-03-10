@@ -15,36 +15,39 @@ import com.melvin.ongandroid.data.login.ResourceLogin
 import com.melvin.ongandroid.data.login.preferences.LoginUserPreferences
 import com.melvin.ongandroid.data.login.repository.LoginRepository
 import com.melvin.ongandroid.databinding.LogInBinding
+import com.melvin.ongandroid.view.BaseActivity
 import com.melvin.ongandroid.view.MainActivity
 import com.melvin.ongandroid.view.signup_user.SignUpUserActivity
 import com.melvin.ongandroid.viewmodel.login.LoginViewModel
 import com.melvin.ongandroid.viewmodel.login.base.LoginViewModelFactory
 import kotlinx.coroutines.launch
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
 
     private val viewModel by viewModels<LoginViewModel>{LoginViewModelFactory(
         LoginRepository(
             Retrofit2.buildApi(LoginApiService::class.java))
     )}
-
     private lateinit var binding: LogInBinding
     private lateinit var loginUserPreferences: LoginUserPreferences
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         loginUserPreferences = LoginUserPreferences(this)
 
         binding.btnSignUp.setOnClickListener {
             startActivity(Intent(this@LoginActivity, SignUpUserActivity::class.java))
         }
 
+
         viewModel.loginResponse.observe(this, {
             when(it){
                 is ResourceLogin.Success -> {
-
                     lifecycleScope.launch {
                         loginUserPreferences.saveTokenUser(it.value.data.token)
                     }
@@ -61,6 +64,8 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString().trim()
             Log.d("VALIDATION", "EMAIL: ${email}, PASSWORD: ${password}")
             viewModel.login(email, password)
+            attachLoadingProgressBar(binding.mainView)
+
         }
     }
 
