@@ -29,6 +29,10 @@ class SignUpUserViewModel : ViewModel() {
 
     }
 
+    private val _progressBarStatus = MutableLiveData(false)
+    val progressBarStatus
+        get() = _progressBarStatus
+
     private fun passwordAndConfirmPasswordIsEquals(pass: String, cPass: String): Boolean {
         if (pass == cPass) {
             _errorMsgIsEnabled.postValue(false)

@@ -7,15 +7,15 @@ import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.ActivitySignUpUserBinding
 import android.text.Editable
 import android.text.TextWatcher
+import com.melvin.ongandroid.view.BaseActivity
 
-class SignUpUserActivity : AppCompatActivity() {
+class SignUpUserActivity : BaseActivity() {
     private lateinit var binding: ActivitySignUpUserBinding
     private val viewModel by viewModels<SignUpUserViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         buttonRegisterIsEnabled(false)
 
         binding.textFieldUsernameRegisterView.addTextChangedListener(signUpTextWatcher())
@@ -24,12 +24,12 @@ class SignUpUserActivity : AppCompatActivity() {
         binding.textFieldConfirmPasswordUserRegisterView.addTextChangedListener(signUpTextWatcher())
 
         setObserver()
-
         binding.buttonRegisterUserRegisterView.setOnClickListener {
             val username = "TO-DO"
             val email = binding.textFieldEmailUserRegisterView.text.toString().trim()
             val password = binding.textFieldPasswordUserRegisterView.text.toString().trim()
             //viewModel.registerNewUser(username, email, password, this)
+
         }
     }
 
@@ -43,7 +43,7 @@ class SignUpUserActivity : AppCompatActivity() {
             val email = binding.textFieldEmailUserRegisterView.text.toString().trim()
             val password = binding.textFieldPasswordUserRegisterView.text.toString().trim()
             val confirmPass = binding.textFieldConfirmPasswordUserRegisterView.text.toString().trim()
-
+            attachLoadingProgressBar(binding.root)
             viewModel.validateButtonRegister(
                 userName, email,
                 password, confirmPass
@@ -59,6 +59,7 @@ class SignUpUserActivity : AppCompatActivity() {
 
     private fun buttonRegisterIsEnabled(value: Boolean) {
         binding.buttonRegisterUserRegisterView.isEnabled = value
+
     }
 
 

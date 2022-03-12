@@ -19,6 +19,7 @@ import com.melvin.ongandroid.data.login.ResourceLogin
 import com.melvin.ongandroid.data.login.preferences.LoginUserPreferences
 import com.melvin.ongandroid.data.login.repository.LoginRepository
 import com.melvin.ongandroid.databinding.LogInBinding
+import com.melvin.ongandroid.view.BaseActivity
 import com.melvin.ongandroid.view.ProgressActivity
 import com.melvin.ongandroid.view.UserRegisterView.SignUpUserViewModel
 import com.melvin.ongandroid.viewmodel.LoginViewModel
@@ -29,25 +30,28 @@ import com.melvin.ongandroid.viewmodel.login.LoginViewModel
 import com.melvin.ongandroid.viewmodel.login.base.LoginViewModelFactory
 import kotlinx.coroutines.launch
 
+class LoginActivity : BaseActivity() {
+
 /**
  * Activity para Login de la aplicacion
  * @author Jose Luis Mora
  */
 
-class LoginActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<LoginViewModel>{LoginViewModelFactory(
         LoginRepository(
             Retrofit2.buildApi(LoginApiService::class.java))
     )}
-
     private lateinit var binding: LogInBinding
     private lateinit var loginUserPreferences: LoginUserPreferences
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         loginUserPreferences = LoginUserPreferences(this)
 
         setObserver()
@@ -58,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
         binding.btnSignUp.setOnClickListener {
             startActivity(Intent(this@LoginActivity, SignUpUserActivity::class.java))
         }
+
 
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
@@ -86,7 +91,6 @@ class LoginActivity : AppCompatActivity() {
         viewModel.loginResponse.observe(this, {
             when(it){
                 is ResourceLogin.Success -> {
-
                     lifecycleScope.launch {
                         loginUserPreferences.saveTokenUser(it.value.data.token)
                     }
@@ -111,6 +115,10 @@ class LoginActivity : AppCompatActivity() {
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
+            Log.d("VALIDATION", "EMAIL: ${email}, PASSWORD: ${password}")
+            viewModel.login(email, password)
+            attachLoadingProgressBar(binding.mainView)
+
 
             if(email.isNotEmpty() && password.isNotEmpty()
                 && Validator.isEmailValid(email) ==  true
@@ -121,7 +129,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        override fun afterTextChanged(p0: Editable?) {
         }
 
     }
