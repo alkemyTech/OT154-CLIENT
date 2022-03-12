@@ -1,9 +1,9 @@
 package com.melvin.ongandroid.model.apiservice.network
 
 
+import com.melvin.ongandroid.data.apiservice.APIService
 import com.melvin.ongandroid.data.apiservice.RetrofitInstance
 import com.melvin.ongandroid.model.apimodel.SlideModelResponse
-import com.melvin.ongandroid.model.network.SlideModelApiClient
 
 
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +23,7 @@ class SlideModelService {
 
     suspend fun getActivities():Response<SlideModelResponse>{
          return withContext(Dispatchers.IO){
-            val response = retrofit.create(SlideModelApiClient::class.java).getAllSlides()
+            val response = retrofit.create(APIService::class.java).getAllSlides()
              response
         }
 

@@ -48,7 +48,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = LogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         loginUserPreferences = LoginUserPreferences(this)
 
         setObserver()
