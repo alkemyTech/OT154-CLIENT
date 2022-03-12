@@ -1,9 +1,9 @@
-/**
- * Clase que emula el comportamiento de la clase HomeViewModel
- * Utilizada para realizar test unitario a dicha clase
- *
- * @author Martin Re
- */
+///**
+// * Clase que emula el comportamiento de la clase HomeViewModel
+// * Utilizada para realizar test unitario a dicha clase
+// *
+// * @author Martin Re
+// */
 package com.melvin.ongandroid.homeviewmodeltest
 
 import androidx.lifecycle.LiveData
@@ -15,7 +15,9 @@ import com.melvin.ongandroid.model.apimodel.ActivityModel
 import kotlinx.coroutines.launch
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
+
 class HomeViewModelFake : ViewModel() {
+
     private lateinit var getActivitiesInteractor: GetActivitiesInteractor
 
     //variables livedata para cargar los datos en el carrousel de bienvenida

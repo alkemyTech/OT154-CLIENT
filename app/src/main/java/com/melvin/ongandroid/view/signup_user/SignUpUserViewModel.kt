@@ -1,17 +1,10 @@
 package com.melvin.ongandroid.view.signup_user
 
-import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-//import com.melvin.ongandroid.data.apiservice.APIService
-import com.melvin.ongandroid.data.apiservice.Retrofit2
-import com.melvin.ongandroid.model.apiservice.apimodel.NewUserResponse
 import com.melvin.ongandroid.view.utils.Validator
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+
 
 class SignUpUserViewModel : ViewModel() {
 
@@ -51,7 +44,7 @@ class SignUpUserViewModel : ViewModel() {
 
     /* fun registerNewUser(email: String,name: String, password: String, context: Context) {
 
-        val retrofit = Retrofit2.getRetrofit().create(APIService::class.java)
+       val retrofit = Retrofit2.getRetrofit().create(APITestimonialService::class.java)
 
         retrofit.postNewUser(email, name, password)
             .enqueue(object :

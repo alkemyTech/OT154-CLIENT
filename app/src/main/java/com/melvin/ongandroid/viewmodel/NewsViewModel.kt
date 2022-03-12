@@ -1,17 +1,29 @@
 package com.melvin.ongandroid.viewmodel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.melvin.ongandroid.model.apiservice.NewsResponse
+import androidx.lifecycle.viewModelScope
+import com.melvin.ongandroid.businesslogic.GetNewsInteractor
+import com.melvin.ongandroid.model.apimodel.NewsModel
+import kotlinx.coroutines.launch
 
 class NewsViewModel: ViewModel() {
-    fun addItems(): MutableList<NewsResponse>{
-        val news = mutableListOf<NewsResponse>()
+    private var interactor = GetNewsInteractor()
+    private val _news: MutableLiveData<List<NewsModel>> = MutableLiveData()
+    val news: LiveData<List<NewsModel>> = _news
+    private val _progressBarIsEnabled: MutableLiveData<Boolean> = MutableLiveData()
+    val progressBarIsEnabled: LiveData<Boolean> = _progressBarIsEnabled
 
-        news.add(NewsResponse(0,"Hola","asdasdasdas","https://cdn.pixabay.com/photo/2020/06/01/22/23/eyes-5248678_960_720.jpg",""))
-        news.add(NewsResponse(1,"Que tal","asdadasdga","https://cdn.pixabay.com/photo/2020/05/24/23/44/hands-5216585_960_720.jpg",""))
-        news.add(NewsResponse(2,"Como estan","ghhadas","https://cdn.pixabay.com/photo/2019/03/18/04/53/bird-4062359_960_720.jpg",""))
-
-        return news
+    fun setListNews(){
+        viewModelScope.launch {
+            _progressBarIsEnabled.postValue(true)
+            val listNews: List<NewsModel> = interactor()
+            if (listNews.isNotEmpty()){
+                _news.postValue(listNews)
+                _progressBarIsEnabled.postValue(false)
+            }
+        }
     }
 
 }
