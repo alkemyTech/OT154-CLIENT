@@ -1,5 +1,11 @@
 package com.melvin.ongandroid.model.login
 
+
+/**
+ * Modelo que representa el array json llamado user
+ * @author Jose Luis Mora
+ */
+
 data class User(
     val address: Any,
     val created_at: String,

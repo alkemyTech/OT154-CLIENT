@@ -1,13 +1,17 @@
 package com.melvin.ongandroid.view.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.databinding.FragmentHomeBinding
+import com.melvin.ongandroid.view.news.NewsFragment
 import com.melvin.ongandroid.viewmodel.HomeViewModel
 
 
@@ -20,6 +24,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
         init()
+        moreNews()
+
     }
 
     /*Funcion inicializadora, que toma en conjunto las funciones necesarias para el Fragment.
@@ -57,7 +63,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 binding.btnRetry.isVisible = true
                 binding.textviewError.isVisible = true
             }
-
         }
     }
 
@@ -65,4 +70,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onResume()
         viewModel.getListActivities()
     }
+
+    //Funcion que al realizar click cobre el boton "Ver mas" nos dirige al fragment News - Valderas Leandro
+    private fun moreNews() {
+        binding.btnMoreNews.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToNewsFragment()
+            )
+        }
+    }
+
 }

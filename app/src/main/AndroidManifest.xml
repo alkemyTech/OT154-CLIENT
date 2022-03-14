@@ -20,6 +20,11 @@
             android:exported="false" />
 
         <activity
+            android:name=".view.news.NewsFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+
+        <activity
             android:name=".view.signup_user.SignUpUserActivity"
 
             android:exported="false" />
@@ -33,15 +38,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".view.MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan">
+        </activity>
         <service
             android:name=".businesslogic.MyFirebaseMessagingService"
             android:exported="false"
             tools:ignore="Instantiatable">
-            <intent-filter>
+<intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>

@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.melvin.ongandroid.R
-import com.melvin.ongandroid.model.apiservice.NewsResponse
+import com.melvin.ongandroid.model.apimodel.NewsModel
 
-class NewsAdapter(private var newsList: MutableList<NewsResponse>): RecyclerView.Adapter<NewsViewHolder>() {
+
+class NewsAdapter(private var newsList: List<NewsModel>): RecyclerView.Adapter<NewsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val layoutInflater=  LayoutInflater.from(parent.context)
@@ -21,7 +22,7 @@ class NewsAdapter(private var newsList: MutableList<NewsResponse>): RecyclerView
 
     override fun getItemCount(): Int = newsList.size
 
-    fun setNews(news: MutableList<NewsResponse>){
+    fun setNews(news: MutableList<NewsModel>){
         this.newsList = news
         notifyDataSetChanged()
     }

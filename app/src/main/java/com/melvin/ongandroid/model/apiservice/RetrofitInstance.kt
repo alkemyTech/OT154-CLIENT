@@ -16,19 +16,24 @@ class RetrofitInstance {
     }
 }
 
+
 /*}
 
 
+>>>>>>> 7aee8908a915b8f0b3d5eb3e503b7d6bec05e81e
 
-    private fun getOkHttpClient(): OkHttpClient {
-        var interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BASIC
-        val client : OkHttpClient.Builder= OkHttpClient.Builder()
-            .cache(null)
-            .addInterceptor(interceptor)
+private fun getOkHttpClient(): OkHttpClient {
+    var interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor()
+    interceptor.level = HttpLoggingInterceptor.Level.BASIC
+    val client: OkHttpClient.Builder = OkHttpClient.Builder()
+        .cache(null)
+        .addInterceptor(interceptor)
 
-        return client.build()
+    return client.build()
 
+<<<<<<< HEAD
+}
+=======
     }*/
 
 
