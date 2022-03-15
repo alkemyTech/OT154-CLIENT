@@ -15,6 +15,7 @@ import com.melvin.ongandroid.application.DataState
 import com.melvin.ongandroid.data.remote.network.APIManager
 import com.melvin.ongandroid.databinding.FragmentTestimonialsBinding
 import com.melvin.ongandroid.data.local.model.Testimonial
+import com.melvin.ongandroid.data.remote.firebase.FirebaseEvent
 import com.melvin.ongandroid.presentation.testimonial.TestimonialViewModel
 import com.melvin.ongandroid.presentation.testimonial.TestimonialViewModelFactory
 
@@ -52,11 +53,13 @@ class TestimonialsFragment : Fragment() {
                 handlerErrorVisibility(false)
                 handlerProgressBarVisibility(false)
                 handlerRecyclerVisibility(true)
+                FirebaseEvent.setLogEvent(requireContext(),"testimonios_retrieve_success")
             }
             is DataState.Error -> {
                 handlerErrorVisibility(true)
                 handlerProgressBarVisibility(false)
                 handlerRecyclerVisibility(false)
+                FirebaseEvent.setLogEvent(requireContext(),"testimonies_retrieve_error")
             }
             is DataState.Loading -> {
                 handlerErrorVisibility(false)

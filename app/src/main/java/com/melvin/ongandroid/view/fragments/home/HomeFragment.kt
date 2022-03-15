@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.melvin.ongandroid.R
+import com.melvin.ongandroid.data.remote.firebase.FirebaseEvent
 import com.melvin.ongandroid.databinding.FragmentHomeBinding
 import com.melvin.ongandroid.presentation.home.HomeViewModel
 
@@ -45,6 +46,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewModel.activities.observe(viewLifecycleOwner) { activities ->
             binding.carousel.addData(activities)
             binding.lastestNewsCarousel.addData(viewModel.addItems())
+            FirebaseEvent.setLogEvent(requireContext(), "slider_retrieve_success")
+            FirebaseEvent.setLogEvent(requireContext(), "last_news_retrieve_success")
 
         }
 
@@ -60,6 +63,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 binding.btnRetry.isVisible = true
                 binding.textviewError.isVisible = true
             }
+            FirebaseEvent.setLogEvent(requireContext(), "slider_retrieve_error")
+            FirebaseEvent.setLogEvent(requireContext(), "last_news_retrieve_error")
+
         }
     }
 
@@ -74,6 +80,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             findNavController().navigate(
                 HomeFragmentDirections.actionHomeFragmentToNewsFragment()
             )
+            FirebaseEvent.setLogEvent(requireContext(), "last_news_see_more_pressed")
         }
     }
 
