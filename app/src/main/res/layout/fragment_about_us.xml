@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/string_headre_about_us"
+            android:text="@string/string_header_about_us"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="40sp"
@@ -24,6 +24,58 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/message_nosotros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtNosotros"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam felis, aliquet ut lectus at, mollis ultricies elit. Proin consequat magna non lacinia viverra. Vivamus nec ligula eu massa ullamcorper tempor."/>
+
+        <TextView
+            android:id="@+id/txtMiembros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/string_about_us_members"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message_nosotros"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerAboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMiembros"
+            app:layout_constraintVertical_bias="0.25"
+            tools:listitem="@layout/item_about_us"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/i_progress_bar"
+                layout="@layout/loading" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
