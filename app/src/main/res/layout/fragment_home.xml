@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.home.HomeFragment">
+    tools:context=".view.fragments.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_constraint"
@@ -88,7 +88,7 @@
 
         <fragment
             android:id="@+id/navTestimonialsFragment"
-            android:name="com.melvin.ongandroid.view.testimonial.TestimonialsFragment"
+            android:name="com.melvin.ongandroid.view.fragments.testimonial.TestimonialsFragment"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

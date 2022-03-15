@@ -4,22 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".view.news.NewsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <com.google.android.material.textview.MaterialTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/news_title"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="25dp"
     android:orientation="vertical"
-    tools:context=".view.news.NewsFragment"/>
+    tools:context=".view.fragments.news.NewsFragment">
 
+    
     <TextView
         android:id="@+id/txtNews"
         android:layout_width="match_parent"
