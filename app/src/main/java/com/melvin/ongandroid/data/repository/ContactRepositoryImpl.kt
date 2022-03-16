@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.flow
 
 class ContactRepositoryImpl(private val dataSource: ContactDataSource) :
     ContactRepository {
-    override fun saveContact(contact: Contact): Flow<Response<ResponseApi<Contact>>> = flow {
+    override fun saveContact(contact: Contact): Flow<Response<ResponseApi<MutableList<Contact>>>> = flow {
         try {
             val apiResponse = dataSource.saveContact(contact)
             emit(Response.Success(apiResponse))

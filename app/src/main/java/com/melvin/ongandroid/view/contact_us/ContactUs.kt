@@ -13,7 +13,6 @@ import com.melvin.ongandroid.data.repository.ContactRepositoryImpl
 import com.melvin.ongandroid.databinding.FragmentContactUsBinding
 import com.melvin.ongandroid.model.Contact
 import com.melvin.ongandroid.view.utils.ComponentUtils.Companion.showAlert
-import com.melvin.ongandroid.view.utils.ComponentUtils.Companion.showToast
 import com.melvin.ongandroid.view.utils.DataState
 import com.melvin.ongandroid.view.utils.Validator
 
@@ -51,10 +50,10 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
 
     private val textWatcher = object : TextWatcher {
         override fun afterTextChanged(p0: Editable?) {
-           /* val txtEmail = binding.textfieldEmailFragmentContactUs.text.toString().trim()
-            if (!Validator.isEmailValid(txtEmail))
-                showToast(requireContext(), getString(R.string.invalid_email_text))
-                */
+            /* val txtEmail = binding.textfieldEmailFragmentContactUs.text.toString().trim()
+             if (!Validator.isEmailValid(txtEmail))
+                 showToast(requireContext(), getString(R.string.invalid_email_text))
+                 */
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -77,7 +76,7 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
                     0,
                     binding.textfieldFirstnameFragmentContactUs.text.toString(),
                     binding.textfieldEmailFragmentContactUs.text.toString(),
-                    "65116",
+                    binding.textfieldPhoneFragmentContactUs.text.toString(),
                     binding.textfieldQuestionFragmentContactUs.text.toString()
                 )
             )
@@ -98,9 +97,9 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
         }
     }
 
-    private fun handleUiContact(uiState: DataState<Contact>) {
+    private fun handleUiContact(uiState: DataState<MutableList<Contact>>) {
         when (uiState) {
-            is DataState.Success<Contact> -> {
+            is DataState.Success<MutableList<Contact>> -> {
                 showAlert(
                     requireContext(),
                     getString(R.string.contact_send),

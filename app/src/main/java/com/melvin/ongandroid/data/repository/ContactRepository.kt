@@ -6,5 +6,5 @@ import com.melvin.ongandroid.model.Contact
 import kotlinx.coroutines.flow.Flow
 
 interface ContactRepository {
-    fun saveContact(contact: Contact): Flow<Response<ResponseApi<Contact>>>
+    fun saveContact(contact: Contact): Flow<Response<ResponseApi<MutableList<Contact>>>>
 }

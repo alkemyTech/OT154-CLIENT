@@ -5,7 +5,7 @@ import com.melvin.ongandroid.data.response.ResponseApi
 import com.melvin.ongandroid.model.Contact
 
 class ContactDataSourceImpl(private val service: APIContactManager): ContactDataSource {
-    override suspend fun saveContact(contact: Contact): ResponseApi<Contact> {
+    override suspend fun saveContact(contact: Contact): ResponseApi<MutableList<Contact>> {
         return service.saveContact(contact)
     }
 }

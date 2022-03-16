@@ -5,7 +5,7 @@ import com.melvin.ongandroid.model.Contact
 
 class APIContactManager {
 
-    suspend fun saveContact(contact: Contact): ResponseApi<Contact> {
+    suspend fun saveContact(contact: Contact): ResponseApi<MutableList<Contact>> {
         return getRetrofitInstance().saveContact(contact)
     }
 

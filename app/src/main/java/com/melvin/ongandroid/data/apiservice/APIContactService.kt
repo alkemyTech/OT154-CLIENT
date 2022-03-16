@@ -7,5 +7,5 @@ import retrofit2.http.POST
 
 interface APIContactService {
     @POST("api/contacts")
-    suspend fun saveContact(@Body contact: Contact): ResponseApi<Contact>
+    suspend fun saveContact(@Body contact: Contact): ResponseApi<MutableList<Contact>>
 }

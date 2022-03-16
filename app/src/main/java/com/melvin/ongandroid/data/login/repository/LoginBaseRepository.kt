@@ -5,6 +5,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
+/**
+ * Clase abstractab que representa la base para la creacion del repositorio. Utiliza corrutinas para
+ * realizar la llamada a la API y retornar un ResourceLogin de tipo si la llamada es exitosa
+ * @author Jose Luis Mora
+ */
+
 abstract class LoginBaseRepository {
 
     suspend fun <T> safeApiCall(apiCall: suspend () -> T): ResourceLogin<T>
