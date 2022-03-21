@@ -19,10 +19,10 @@ class ActivitiesRepository {
 
     suspend fun getActivitiesFromApi(): List<ActivityModel>? {
         val response = apiService.getActivities()
-        if (response.code() == 200 && response.isSuccessful){
-            return response.body()?.data
+        return if (response.code() == 200 && response.isSuccessful){
+            response.body()?.data
         }else{
-            return emptyList()
+            emptyList()
         }
 
     }

@@ -4,6 +4,9 @@ import com.melvin.ongandroid.data.remote.response.ResponseApi
 import com.melvin.ongandroid.data.local.model.Contact
 import com.melvin.ongandroid.data.local.model.Testimonial
 import com.melvin.ongandroid.data.local.model.Activity
+import com.melvin.ongandroid.data.local.model.MembersModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class APIManager {
 
@@ -19,8 +22,14 @@ class APIManager {
         return getRetrofitInstance().saveContact(contact)
     }
 
+    suspend fun getMembers(): ResponseApi<MutableList<MembersModel>>{
+        return getRetrofitInstance().getAllMembers()
+    }
 
-    private fun getRetrofitInstance(): APIService {
-        return RetrofitInstance.getRetrofit().create(APIService::class.java)
+    private suspend fun getRetrofitInstance(): APIService {
+        return withContext(Dispatchers.IO){
+            val response = RetrofitInstance.getRetrofit().create(APIService::class.java)
+             response
+        }
     }
 }

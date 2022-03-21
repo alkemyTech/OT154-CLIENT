@@ -1,4 +1,4 @@
-package com.melvin.ongandroid.presentation.contactus
+package com.melvin.ongandroid.presentation.contact_us
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
