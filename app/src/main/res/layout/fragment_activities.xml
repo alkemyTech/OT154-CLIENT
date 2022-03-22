@@ -8,11 +8,8 @@
 
     <include
         android:id="@+id/i_progress_bar"
-        layout="@layout/loading"
-        />
-    <include
-        android:id="@+id/i_generic_error"
-        layout="@layout/generic_error" />
+        layout="@layout/loading" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_activities"
@@ -53,5 +50,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <include
+        android:id="@+id/activityError"
+        layout="@layout/layout_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        app:layout_constraintVertical_bias="0.24000001" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,6 +61,7 @@ class ActivitiesFragment : Fragment() {
                 handlerErrorVisibility(true)
                 handlerProgressBarVisibility(false)
                 handlerRecyclerVisibility(false)
+                reloadRecyclerView()
             }
             is DataState.Loading -> {
                 handlerErrorVisibility(false)
@@ -81,6 +82,13 @@ class ActivitiesFragment : Fragment() {
         ComponentUtils.showToast(requireContext(), "Ha ocurrido un error")
     }
 
+    fun reloadRecyclerView(){
+        with(binding){
+            activityError.btnRetry.setOnClickListener {
+                viewModel.getActivities()
+            }
+        }
+    }
     private fun subscribeLiveData() {
         with(viewModel) {
             getActivities()
@@ -112,7 +120,7 @@ class ActivitiesFragment : Fragment() {
 
     private fun handlerErrorVisibility(show: Boolean) {
         with(binding) {
-            iGenericError.clGenericError.visibility = if (show) View.VISIBLE else View.GONE
+            activityError.root.visibility = if (show) View.VISIBLE else View.GONE
         }
     }
 }
