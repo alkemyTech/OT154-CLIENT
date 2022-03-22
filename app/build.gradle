@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
 
     ///apply plugin: 'com.google.gms.google-services'
 }
@@ -40,7 +41,6 @@ android {
 }
 
 dependencies {
-
     def lifecycle_version = "2.2.0"
     def nav_version = "2.4.0"
     def okhttp_version = "4.9.2"
@@ -59,11 +59,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-analytics:20.1.0'
 
     //Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kt_coroutines")
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0'
-
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

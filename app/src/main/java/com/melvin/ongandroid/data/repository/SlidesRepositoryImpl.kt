@@ -1,10 +1,8 @@
 package com.melvin.ongandroid.data.repository
 
-
-
+import com.melvin.ongandroid.data.datasource.SlideDataSource
+import com.melvin.ongandroid.data.datasource.SlideDataSourceImpl
 import com.melvin.ongandroid.data.local.model.ActivityModel
-import com.melvin.ongandroid.data.remote.network.SlideModelService
-
 
 
 /**
@@ -13,12 +11,12 @@ import com.melvin.ongandroid.data.remote.network.SlideModelService
  *
  * @author Martin Re
  */
-class ActivitiesRepository {
+class SlidesRepositoryImpl: SlidesRepository {
 
-    private val apiService = SlideModelService()
+    private val dataSource: SlideDataSource = SlideDataSourceImpl()
 
-    suspend fun getActivitiesFromApi(): List<ActivityModel>? {
-        val response = apiService.getActivities()
+    override suspend fun getActivitiesFromApi(): List<ActivityModel>? {
+        val response = dataSource.getSlides()
         return if (response.code() == 200 && response.isSuccessful){
             response.body()?.data
         }else{

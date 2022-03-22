@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.melvin.ongandroid.data.repository.GetActivitiesInteractor
 import com.melvin.ongandroid.data.local.model.ActivityModel
+import com.melvin.ongandroid.data.repository.GetActivitiesInteractor
 import kotlinx.coroutines.launch
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
