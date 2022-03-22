@@ -1,7 +1,8 @@
 package com.melvin.ongandroid.data.apiservice
 
-import com.melvin.ongandroid.data.response.ResponseApi
-import com.melvin.ongandroid.model.Contact
+import com.melvin.ongandroid.data.local.model.Contact
+import com.melvin.ongandroid.data.remote.network.RetrofitInstance
+import com.melvin.ongandroid.data.remote.response.ResponseApi
 
 class APIContactManager {
 
@@ -10,6 +11,6 @@ class APIContactManager {
     }
 
     private fun getRetrofitInstance(): APIContactService {
-        return Retrofit2.getRetrofit().create(APIContactService::class.java)
+        return RetrofitInstance.getRetrofit().create(APIContactService::class.java)
     }
 }

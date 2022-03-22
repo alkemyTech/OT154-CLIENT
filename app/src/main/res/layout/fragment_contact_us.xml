@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".view.contact_us.ContactUs"
+    tools:context=".view.fragments.contact_us.ContactUs"
     android:padding="@dimen/padding_main_constraint_layout_fragment_contactus">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -90,9 +90,15 @@
             android:id="@+id/textfield_email_fragment_contact_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:hint="@string/string_email_textfield_fragment_contactus"
             android:inputType="text"
-            android:textSize="@dimen/size_textfield_fragment_contactus" />
+            android:textSize="@dimen/size_textfield_fragment_contactus">
+
+        </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
 

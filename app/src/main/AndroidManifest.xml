@@ -11,29 +11,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.ONGAndroid"
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".view.login.LoginActivity"
+            android:name="com.melvin.ongandroid.view.activities.login.LoginActivity"
             android:exported="false" />
 
         <activity
-            android:name=".view.news.NewsFragment"
+            android:name=".view.fragments.news.NewsFragment"
             android:exported="false"
             tools:ignore="Instantiatable" />
 
         <activity
-            android:name=".view.signup_user.SignUpUserActivity"
-
+            android:name=".view.activities.signup_user.SignUpUserActivity"
             android:exported="false" />
 
 
         <activity
-            android:name=".view.SplashActivity"
-            android:exported="false"
-            android:theme="@style/SplashTheme"/>
+            android:name=".view.activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+
+        </activity>
 
 
         <activity
@@ -46,10 +46,10 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".businesslogic.MyFirebaseMessagingService"
+            android:name=".data.remote.firebase.MyFirebaseMessagingService"
             android:exported="false"
             tools:ignore="Instantiatable">
-<intent-filter>
+            <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>

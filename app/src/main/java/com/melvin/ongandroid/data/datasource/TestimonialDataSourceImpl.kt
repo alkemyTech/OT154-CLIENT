@@ -1,10 +1,10 @@
 package com.melvin.ongandroid.data.datasource
 
-import com.melvin.ongandroid.data.apiservice.APITestimonialManager
-import com.melvin.ongandroid.model.Testimonial
-import com.melvin.ongandroid.data.response.ResponseApi
+import com.melvin.ongandroid.data.remote.network.APIManager
+import com.melvin.ongandroid.data.local.model.Testimonial
+import com.melvin.ongandroid.data.remote.response.ResponseApi
 
-class TestimonialDataSourceImpl(private val service: APITestimonialManager): TestimonialDataSource {
+class TestimonialDataSourceImpl(private val service: APIManager): TestimonialDataSource {
     override suspend fun getTestimonials(): ResponseApi<MutableList<Testimonial>> {
         return service.getTestimonials()
     }

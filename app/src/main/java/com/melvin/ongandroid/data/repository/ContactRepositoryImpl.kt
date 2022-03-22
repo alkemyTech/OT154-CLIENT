@@ -1,9 +1,9 @@
 package com.melvin.ongandroid.data.repository
 
 import com.melvin.ongandroid.data.datasource.ContactDataSource
-import com.melvin.ongandroid.view.utils.Response
-import com.melvin.ongandroid.data.response.ResponseApi
-import com.melvin.ongandroid.model.Contact
+import com.melvin.ongandroid.application.Response
+import com.melvin.ongandroid.data.remote.response.ResponseApi
+import com.melvin.ongandroid.data.local.model.Contact
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

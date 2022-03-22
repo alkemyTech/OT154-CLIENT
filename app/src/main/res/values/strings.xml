@@ -66,4 +66,9 @@
     <string name="cd_image_logo_user_register_view">logo</string>
     <string name="more_news_button">VER MAS</string>
 
+    <!--- FragmentAboutUs -->
+    <string name="string_header_about_us">Sobre Nosotros </string>
+    <string name="string_about_us_members">Miembros</string>
+
+
 </resources>

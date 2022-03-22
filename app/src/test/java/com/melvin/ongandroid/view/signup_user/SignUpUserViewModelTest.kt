@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.Observer
+import com.melvin.ongandroid.presentation.signup.SignUpUserViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -41,6 +42,8 @@ class SignUpUserViewModelTest : TestCase(), LifecycleOwner {
     override fun setUp() {
         super.setUp()
         MockKAnnotations.init(this)
+//        Dispatchers.setMain(testDispatcher)
+
         Dispatchers.setMain(Dispatchers.Unconfined)
         signUpUserViewModel = SignUpUserViewModel()
     }

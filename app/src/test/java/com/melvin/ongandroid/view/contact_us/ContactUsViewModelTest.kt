@@ -1,29 +1,8 @@
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.melvin.ongandroid.data.repository.ContactRepository
-import com.melvin.ongandroid.model.Contact
-import com.melvin.ongandroid.view.contact_us.ContactUs
-import com.melvin.ongandroid.view.contact_us.ContactUsViewModel
-import com.melvin.ongandroid.view.utils.DataState
-import com.melvin.ongandroid.view.utils.Response
-import io.mockk.*
-import io.mockk.impl.annotations.MockK
-import io.mockk.impl.annotations.RelaxedMockK
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.runBlockingTest
-import kotlinx.coroutines.test.setMain
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
-import java.util.*
-
 //package com.melvin.ongandroid.view.contact_us
 //
 //import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 //import com.melvin.ongandroid.data.repository.ContactRepository
-//import com.melvin.ongandroid.model.Contact
+//import com.melvin.ongandroid.data.local.model.Contact
 //import com.melvin.ongandroid.view.utils.DataState
 //import com.melvin.ongandroid.view.utils.Response
 //import io.mockk.MockKAnnotations
