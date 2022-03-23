@@ -11,6 +11,10 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
+import com.facebook.AccessToken
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.data.remote.network.RetrofitInstance
 import com.melvin.ongandroid.data.repository.login.ResourceLogin
@@ -24,6 +28,12 @@ import com.melvin.ongandroid.data.remote.network.APIService
 import com.melvin.ongandroid.presentation.login.LoginViewModel
 import com.melvin.ongandroid.presentation.login.base.LoginViewModelFactory
 import kotlinx.coroutines.launch
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
+import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.FacebookAuthProvider
+import com.google.firebase.auth.FirebaseAuth
+
 
 /**
  * Activity para Login de la aplicacion
@@ -39,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: LogInBinding
     private lateinit var loginUserPreferences: LoginUserPreferences
+    private val callbackManager = CallbackManager.Factory.create()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +71,10 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString().trim()
             Log.d("VALIDATION", "EMAIL: ${email}, PASSWORD: ${password}")
             viewModel.login(email, password)
+        }
+
+        binding.ibFacebook.setOnClickListener {
+            loginWithFacebook()
         }
     }
 
@@ -121,4 +136,36 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
+    //Login with facebook
+    fun loginWithFacebook(){
+        LoginManager.getInstance().logInWithReadPermissions(this, callbackManager,listOf("email"))
+        LoginManager.getInstance().registerCallback(callbackManager,
+            object : FacebookCallback<LoginResult>{
+
+                override fun onCancel() {
+                    Toast.makeText(this@LoginActivity, "cancel", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onError(error: FacebookException) {
+                    showErrorDialog("Error Facebook", "Verify your account")
+                }
+                override fun onSuccess(result: LoginResult) {
+                    result?.let{
+                        val token:  AccessToken = it.accessToken
+                        val credential: AuthCredential = FacebookAuthProvider.getCredential(token.token)
+                        FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
+                            if(it.isSuccessful){
+                                startActivity(Intent(applicationContext, MainActivity::class.java))
+                            }
+                            else{
+                                showErrorDialog("Error Facebook", "Account not Existing")
+                            }
+                        }
+                    }
+                }
+
+            })
+    }
 }
+

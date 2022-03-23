@@ -124,4 +124,7 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:3.11.2'
     testImplementation 'org.mockito:mockito-inline:2.13.0'
 
+    //Login Facebook
+    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+
 }
