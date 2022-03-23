@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navFragmentAboutUs"
-        android:name="com.melvin.ongandroid.view.fragments.AboutUs"
+        android:name="com.melvin.ongandroid.view.fragments.about_us.AboutUs"
         android:label="Nosotros"
         tools:layout="@layout/fragment_about_us" />
     <fragment

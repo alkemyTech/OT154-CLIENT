@@ -7,6 +7,7 @@ import com.melvin.ongandroid.data.remote.response.SlideModelResponse
 import com.melvin.ongandroid.data.remote.response.NewsResponse
 import retrofit2.Response
 import com.melvin.ongandroid.data.local.model.Activity
+import com.melvin.ongandroid.data.local.model.MembersModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -49,5 +50,8 @@ interface APIService {
 
     @POST("api/contacts")
     suspend fun saveContact(@Body contact: Contact): ResponseApi<Contact>
+
+    @GET("api/members")
+    suspend fun getAllMembers(): ResponseApi<MutableList<MembersModel>>
 
 }

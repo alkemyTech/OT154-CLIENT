@@ -9,6 +9,9 @@ import com.melvin.ongandroid.data.remote.response.SlideModelResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
+import com.melvin.ongandroid.data.local.model.MembersModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class APIManager {
 
@@ -36,8 +39,14 @@ class APIManager {
         }
     }
 
+    suspend fun getMembers(): ResponseApi<MutableList<MembersModel>>{
+        return getRetrofitInstance().getAllMembers()
+    }
 
-    private fun getRetrofitInstance(): APIService {
-        return RetrofitInstance.getRetrofit().create(APIService::class.java)
+    private suspend fun getRetrofitInstance(): APIService {
+        return withContext(Dispatchers.IO){
+            val response = RetrofitInstance.getRetrofit().create(APIService::class.java)
+             response
+        }
     }
 }

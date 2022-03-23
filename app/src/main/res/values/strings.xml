@@ -70,5 +70,11 @@
     <string name="string_header_about_us">Sobre Nosotros </string>
     <string name="string_about_us_members">Miembros</string>
 
+    <!--Facebook-->
+
+    <string name="facebook_app_id">701313221060896</string>
+    <string name="fb_login_protocol_scheme">fb701313221060896</string>
+    <string name="facebook_client_token">f1b26e91beb504b4e2d0597d892e258d</string>
+
 
 </resources>
