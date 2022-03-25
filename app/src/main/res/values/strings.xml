@@ -75,4 +75,12 @@
     <string name="facebook_app_id">701313221060896</string>
     <string name="fb_login_protocol_scheme">fb701313221060896</string>
     <string name="facebook_client_token">f1b26e91beb504b4e2d0597d892e258d</string>
+
+
+    <!---MemberDetailFragment-->
+    <string name="string_title_member_detail_fragment">Detalle</string>
+    <string name="string_textview_member_name_fragment_member_detail">Nombre Miembro</string>
+    <string name="string_textview_member_description_fragment_member_detail">Descripcion</string>
+    <string name="string_textview_facebook_url_fragment_member_detail">facebookurl</string>
+    <string name="string_textview_linkedin_url_fragment_member_detail">linkedinurl</string>
 </resources>
