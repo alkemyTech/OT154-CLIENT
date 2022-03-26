@@ -11,6 +11,8 @@ import com.melvin.ongandroid.R
 import com.melvin.ongandroid.data.local.model.MembersModel
 import com.melvin.ongandroid.databinding.FragmentAboutUsBinding
 import com.melvin.ongandroid.presentation.about_us.AboutUsViewModel
+import com.melvin.ongandroid.utils.EventConstants
+import com.melvin.ongandroid.utils.sendLog
 import com.melvin.ongandroid.view.fragments.about_us.adapter.AboutUsAdapter
 import com.melvin.ongandroid.view.fragments.about_us.interfaces.ListenerOnClick
 
@@ -36,6 +38,7 @@ class AboutUs : Fragment(R.layout.fragment_about_us), ListenerOnClick {
         viewModel.getListMembers()
         viewModel.members.observe(viewLifecycleOwner){
             setAdapter(it)
+            sendLog(EventConstants.MEMBER_SUCCESS, "Member list retrieved successfully")
         }
 
         viewModel.recyclerShutDown.observe(viewLifecycleOwner){
@@ -46,6 +49,7 @@ class AboutUs : Fragment(R.layout.fragment_about_us), ListenerOnClick {
             }
         }
     }
+    //
 
 
 
