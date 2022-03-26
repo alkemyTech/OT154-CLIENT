@@ -11,6 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <include
+            android:id="@+id/i_progress_bar"
+            layout="@layout/loading" />
+
+        <include
+            android:id="@+id/aboutUs_Error"
+            layout="@layout/layout_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/message_nosotros"
+            app:layout_constraintVertical_bias="0.24000001" />
+
         <TextView
             android:id="@+id/txtNosotros"
             android:layout_width="match_parent"
@@ -62,6 +78,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtMiembros"
             app:layout_constraintVertical_bias="0.25"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_about_us"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,9 +88,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <include
-                android:id="@+id/i_progress_bar"
-                layout="@layout/loading" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

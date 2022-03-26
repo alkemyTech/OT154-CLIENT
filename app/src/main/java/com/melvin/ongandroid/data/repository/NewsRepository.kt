@@ -9,11 +9,11 @@ package com.melvin.ongandroid.data.repository
 import com.melvin.ongandroid.data.local.model.NewsModel
 import com.melvin.ongandroid.data.remote.network.NewsModelService
 
-class NewsRepository {
+open class NewsRepository {
 
     private val apiService = NewsModelService()
 
-    suspend fun getAllNewsFromApi(): List<NewsModel>? {
+    open suspend fun getAllNewsFromApi(): List<NewsModel>? {
         val response = apiService.getNews()
         if (response.code() == 200 && response.isSuccessful){
             return response.body()?.data

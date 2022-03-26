@@ -40,4 +40,6 @@
         app:layout_constraintTop_toBottomOf="@+id/nameMembers"
         tools:text="Aqui va el puesto del miembro" />
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import com.melvin.ongandroid.data.remote.response.NewUserResponse
 import com.melvin.ongandroid.data.local.model.login.LoginModel
+import com.melvin.ongandroid.data.local.model.MembersModel
 import retrofit2.http.*
 
 
@@ -26,7 +27,6 @@ interface APIService {
 
     @FormUrlEncoded
     @POST("api/register")
-
     fun postNewUser(
         @Field("email") email: String,
         @Field("name") name: String,
@@ -50,5 +50,8 @@ interface APIService {
 
     @POST("api/contacts")
     suspend fun saveContact(@Body contact: Contact): ResponseApi<Contact>
+
+    @GET("api/members")
+    suspend fun getAllMembers(): ResponseApi<MutableList<MembersModel>>
 
 }

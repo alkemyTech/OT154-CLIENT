@@ -10,14 +10,15 @@ import com.melvin.ongandroid.R
 import com.melvin.ongandroid.data.datasource.ContactDataSourceImpl
 import com.melvin.ongandroid.data.repository.ContactRepositoryImpl
 import com.melvin.ongandroid.databinding.FragmentContactUsBinding
-
 import com.melvin.ongandroid.data.local.model.Contact
 import com.melvin.ongandroid.application.ComponentUtils.Companion.showAlert
 import com.melvin.ongandroid.application.DataState
 import com.melvin.ongandroid.application.Validator
 import com.melvin.ongandroid.data.apiservice.APIContactManager
-import com.melvin.ongandroid.presentation.contactus.ContactUsViewModel
-import com.melvin.ongandroid.presentation.contactus.ContactViewModelFactory
+import com.melvin.ongandroid.presentation.contact_us.ContactViewModelFactory
+import com.melvin.ongandroid.data.remote.network.APIManager
+import com.melvin.ongandroid.presentation.contact_us.ContactUsViewModel
+
 
 
 class ContactUs : Fragment(R.layout.fragment_contact_us) {

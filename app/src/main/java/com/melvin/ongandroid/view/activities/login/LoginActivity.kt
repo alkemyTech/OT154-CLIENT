@@ -16,11 +16,11 @@ import com.melvin.ongandroid.data.remote.network.RetrofitInstance
 import com.melvin.ongandroid.data.repository.login.ResourceLogin
 import com.melvin.ongandroid.data.repository.login.preferences.LoginUserPreferences
 import com.melvin.ongandroid.data.repository.login.repository.LoginRepository
-import com.melvin.ongandroid.databinding.LogInBinding
 import com.melvin.ongandroid.view.MainActivity
 import com.melvin.ongandroid.view.activities.signup_user.SignUpUserActivity
 import com.melvin.ongandroid.application.Validator
 import com.melvin.ongandroid.data.remote.network.APIService
+import com.melvin.ongandroid.databinding.LogInBinding
 import com.melvin.ongandroid.presentation.login.LoginViewModel
 import com.melvin.ongandroid.presentation.login.base.LoginViewModelFactory
 import kotlinx.coroutines.launch
@@ -31,13 +31,13 @@ import kotlinx.coroutines.launch
  */
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: LogInBinding
 
     private val viewModel by viewModels<LoginViewModel>{LoginViewModelFactory(
         LoginRepository(
             RetrofitInstance.buildApi(APIService::class.java))
     )}
 
-    private lateinit var binding: LogInBinding
     private lateinit var loginUserPreferences: LoginUserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -11,14 +11,14 @@ import com.melvin.ongandroid.data.local.model.ActivityModel
  */
 class GetActivitiesInteractor {
 
-    private val repository = ActivitiesRepository()
+    private val repository = SlidesRepositoryImpl()
 
     suspend operator fun invoke(): List<ActivityModel> {
         val listActivities = repository.getActivitiesFromApi()
-        if (listActivities.isNullOrEmpty()){
-            return emptyList()
+        return if (listActivities.isNullOrEmpty()){
+            emptyList()
         }else{
-            return listActivities
+            listActivities
         }
     }
 
