@@ -36,7 +36,7 @@
         android:id="@+id/navFragmentReviews"
         android:name="com.melvin.ongandroid.view.fragments.Reviews"
         android:label="Testimonios"
-        tools:layout="@layout/fragment_reviews" />
+        tools:layout="@layout/fragment_testimonials" />
     <fragment
         android:id="@+id/navFragmentTestimonials"
         android:name="com.melvin.ongandroid.view.fragments.testimonial.TestimonialsFragment"

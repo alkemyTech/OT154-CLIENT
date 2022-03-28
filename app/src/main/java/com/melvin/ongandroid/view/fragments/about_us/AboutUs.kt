@@ -1,25 +1,30 @@
 package com.melvin.ongandroid.view.fragments.about_us
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.application.DataState
 import com.melvin.ongandroid.data.datasource.MemberDataSourceImpl
-import com.melvin.ongandroid.data.local.model.Activity
 import com.melvin.ongandroid.data.local.model.MembersModel
 import com.melvin.ongandroid.data.remote.network.APIManager
 import com.melvin.ongandroid.data.repository.MemberRepositoryImpl
 import com.melvin.ongandroid.databinding.FragmentAboutUsBinding
+import com.melvin.ongandroid.databinding.ItemAboutUsBinding
 import com.melvin.ongandroid.presentation.about_us.AboutUsViewModel
 import com.melvin.ongandroid.presentation.about_us.AboutUsViewModelFactory
 import com.melvin.ongandroid.view.fragments.about_us.adapter.AboutUsAdapter
+import com.melvin.ongandroid.view.fragments.about_us.adapter.AboutUsListener
 
-class AboutUs : Fragment(R.layout.fragment_about_us) {
+
+class AboutUs : Fragment(R.layout.fragment_about_us), AboutUsListener {
 
     private lateinit var binding: FragmentAboutUsBinding
     private lateinit var adapterMembers: AboutUsAdapter
@@ -36,6 +41,8 @@ class AboutUs : Fragment(R.layout.fragment_about_us) {
         setupRecyclerView()
         initViewModel()
         subscribeLiveData()
+
+
     }
 
     override fun onCreateView(
@@ -44,6 +51,7 @@ class AboutUs : Fragment(R.layout.fragment_about_us) {
     ): View? {
         binding = FragmentAboutUsBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
 
@@ -106,7 +114,7 @@ class AboutUs : Fragment(R.layout.fragment_about_us) {
     }
 
     private fun setupRecyclerView() {
-        adapterMembers = AboutUsAdapter()
+        adapterMembers = AboutUsAdapter(this)
         with(binding.recyclerAboutUs) {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
@@ -141,5 +149,16 @@ class AboutUs : Fragment(R.layout.fragment_about_us) {
             aboutUsError.root.visibility = if (show) View.VISIBLE else View.GONE
         }
     }
+
+    override fun facebookLink(url: String) {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        ContextCompat.startActivity(requireContext(),browserIntent,null)
+    }
+
+    override fun linkedinLink(url: String) {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        ContextCompat.startActivity(requireContext(),browserIntent,null)
+    }
+
 
 }
