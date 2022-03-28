@@ -10,6 +10,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.core.os.bundleOf
+
+import androidx.navigation.fragment.findNavController
 import com.melvin.ongandroid.R
 import com.melvin.ongandroid.application.DataState
 import com.melvin.ongandroid.data.datasource.MemberDataSourceImpl
@@ -17,7 +20,6 @@ import com.melvin.ongandroid.data.local.model.MembersModel
 import com.melvin.ongandroid.data.remote.network.APIManager
 import com.melvin.ongandroid.data.repository.MemberRepositoryImpl
 import com.melvin.ongandroid.databinding.FragmentAboutUsBinding
-import com.melvin.ongandroid.databinding.ItemAboutUsBinding
 import com.melvin.ongandroid.presentation.about_us.AboutUsViewModel
 import com.melvin.ongandroid.presentation.about_us.AboutUsViewModelFactory
 import com.melvin.ongandroid.view.fragments.about_us.adapter.AboutUsAdapter
@@ -25,6 +27,7 @@ import com.melvin.ongandroid.view.fragments.about_us.adapter.AboutUsListener
 
 
 class AboutUs : Fragment(R.layout.fragment_about_us), AboutUsListener {
+
 
     private lateinit var binding: FragmentAboutUsBinding
     private lateinit var adapterMembers: AboutUsAdapter
@@ -35,6 +38,7 @@ class AboutUs : Fragment(R.layout.fragment_about_us), AboutUsListener {
             APIManager()
         )
     )
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -112,6 +116,15 @@ class AboutUs : Fragment(R.layout.fragment_about_us), AboutUsListener {
             }
         }
     }
+
+    fun navigateToMemberDetailsFragment(member: MembersModel){
+        val obMember: MembersModel = member
+        val bundle = bundleOf("detailsMember" to obMember)
+        findNavController().navigate(R.id.action_navFragmentAboutUs_to_navFragmentDetailsMember, bundle)
+
+
+    }
+
 
     private fun setupRecyclerView() {
         adapterMembers = AboutUsAdapter(this)

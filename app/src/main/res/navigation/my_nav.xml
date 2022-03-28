@@ -9,7 +9,11 @@
         android:id="@+id/navFragmentAboutUs"
         android:name="com.melvin.ongandroid.view.fragments.about_us.AboutUs"
         android:label="Nosotros"
-        tools:layout="@layout/fragment_about_us" />
+        tools:layout="@layout/fragment_about_us">
+        <action
+            android:id="@+id/action_navFragmentAboutUs_to_navFragmentDetailsMember"
+            app:destination="@id/navFragmentDetailsMember" />
+    </fragment>
     <fragment
         android:id="@+id/navFragmentActivities"
         android:name="com.melvin.ongandroid.view.fragments.activity.ActivitiesFragment"
@@ -52,4 +56,9 @@
         android:name="com.melvin.ongandroid.view.fragments.Donate"
         android:label="Contribuye"
         tools:layout="@layout/fragment_donate" />
+    <fragment
+        android:id="@+id/navFragmentDetailsMember"
+        android:name="com.melvin.ongandroid.view.fragments.memberdetails.MemberDetailsFragment"
+        tools:layout="@layout/fragment_member_details"
+        android:label="Detalle" />
 </navigation>

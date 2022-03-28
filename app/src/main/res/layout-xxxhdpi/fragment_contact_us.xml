@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.fragments.contact_us.ContactUs"
-    android:padding="@dimen/padding_main_constraint_layout_fragment_contactus">
+    android:paddingRight="14dp"
+    android:paddingLeft="14dp">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,6 +38,7 @@
         android:text="@string/string_title_text_view_fragment_contactus"
         android:textColor="@color/black"
         android:textSize="@dimen/size_textview_title_fragment_contactus"
+        android:layout_marginTop="14dp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="@id/guideline_top_fragment_contactus"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="1dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toStartOf="@+id/text_input_layout_phone_contactus"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +73,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="1dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/text_input_layout_firstname_contactus"
@@ -131,17 +135,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6">
+        app:layout_constraintGuide_percent="0.68">
     </androidx.constraintlayout.widget.Guideline>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_submit_fragment_contactus"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/light_blue_600"
         android:enabled="false"
         android:text="@string/string_button_fragment_contactus"
         android:textAllCaps="false"
+        android:layout_marginTop="10dp"
         android:textSize="@dimen/size_textfield_fragment_contactus"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline_bottom_question_fragment_contactus">

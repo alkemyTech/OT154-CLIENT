@@ -55,4 +55,5 @@ class AboutUsViewModel (private val repository: MemberRepository) : ViewModel() 
             }.launchIn(this)
         }
     }
+
 }

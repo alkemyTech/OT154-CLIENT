@@ -61,6 +61,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx'
     implementation 'com.google.firebase:firebase-analytics:20.1.0'
 
+    //Google play Services
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+
     //Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kt_coroutines")
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0'
@@ -123,5 +126,8 @@ dependencies {
     //Mockito
     testImplementation 'org.mockito:mockito-core:3.11.2'
     testImplementation 'org.mockito:mockito-inline:2.13.0'
+
+    //Login Facebook
+    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
 
 }

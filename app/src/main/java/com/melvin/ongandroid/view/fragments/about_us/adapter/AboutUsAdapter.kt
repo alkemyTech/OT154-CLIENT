@@ -18,6 +18,7 @@ class AboutUsAdapter(private val aboutUsListener: AboutUsListener): RecyclerView
         return AboutUsViewHolder(view, aboutUsListener)
             }
 
+
     override fun onBindViewHolder(holder: AboutUsViewHolder, position: Int) {
         val item = members[position]
         holder.render(item)

@@ -3,4 +3,12 @@
     <!-- xxhdpi -->
     <dimen name="size_textview_title_fragment_contactus">18sp</dimen>
     <dimen name="size_textfield_fragment_contactus">16sp</dimen>
+
+    <!-- FragmentMemberDetail -->
+    <dimen name="layout_width_height_image_member_fragment_member_detail">180dp</dimen>
+    <dimen name="layout_width_logo_fragment_member_detail">250dp</dimen>
+    <dimen name="layout_height_logo_fragment_member_detail">100dp</dimen>
+    <dimen name="size_textview_member_name_fragment_member_detail">22sp</dimen>
+    <dimen name="size_textview_member_link_fragment_member_detail">18sp</dimen>
+
 </resources>
