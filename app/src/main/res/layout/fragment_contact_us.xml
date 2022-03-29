@@ -28,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/string_title_text_view_fragment_contactus"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="@dimen/size_textview_title_fragment_contactus"
         android:textStyle="bold"
