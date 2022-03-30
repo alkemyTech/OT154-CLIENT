@@ -50,7 +50,7 @@
             app:layout_constraintTop_toBottomOf="@id/txtNosotros"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:padding="8dp"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam felis, aliquet ut lectus at, mollis ultricies elit. Proin consequat magna non lacinia viverra. Vivamus nec ligula eu massa ullamcorper tempor."/>
@@ -59,7 +59,7 @@
             android:id="@+id/txtMiembros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="20dp"
             android:text="@string/string_about_us_members"
             android:textAlignment="center"
             android:textColor="@color/black"
