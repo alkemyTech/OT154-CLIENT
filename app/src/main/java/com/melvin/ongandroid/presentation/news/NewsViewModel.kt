@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.melvin.ongandroid.data.local.model.NewsModel
 import com.melvin.ongandroid.data.repository.GetNewsInteractor
+import com.melvin.ongandroid.data.local.model.NewsModel
+
 import kotlinx.coroutines.launch
 
 class NewsViewModel: ViewModel() {

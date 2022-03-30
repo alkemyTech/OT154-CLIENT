@@ -14,14 +14,16 @@ import com.melvin.ongandroid.data.local.model.Contact
 import com.melvin.ongandroid.application.ComponentUtils.Companion.showAlert
 import com.melvin.ongandroid.application.DataState
 import com.melvin.ongandroid.application.Validator
+import com.melvin.ongandroid.data.apiservice.APIContactManager
+import com.melvin.ongandroid.presentation.contact_us.ContactViewModelFactory
 import com.melvin.ongandroid.data.remote.network.APIManager
 import com.melvin.ongandroid.presentation.contact_us.ContactUsViewModel
-import com.melvin.ongandroid.presentation.contact_us.ContactViewModelFactory
+
 
 
 class ContactUs : Fragment(R.layout.fragment_contact_us) {
     lateinit var binding: FragmentContactUsBinding
-    private val repository = ContactRepositoryImpl(ContactDataSourceImpl(APIManager()))
+    private val repository = ContactRepositoryImpl(ContactDataSourceImpl(APIContactManager()))
     private lateinit var viewModel: ContactUsViewModel
 
 
@@ -52,10 +54,10 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
 
     private val textWatcher = object : TextWatcher {
         override fun afterTextChanged(p0: Editable?) {
-           /* val txtEmail = binding.textfieldEmailFragmentContactUs.text.toString().trim()
-            if (!Validator.isEmailValid(txtEmail))
-                showToast(requireContext(), getString(R.string.invalid_email_text))
-                */
+           /*  val txtEmail = binding.textfieldEmailFragmentContactUs.text.toString().trim()
+             if (!Validator.isEmailValid(txtEmail))
+                 showToast(requireContext(), getString(R.string.invalid_email_text))*/
+
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -78,7 +80,7 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
                     0,
                     binding.textfieldFirstnameFragmentContactUs.text.toString(),
                     binding.textfieldEmailFragmentContactUs.text.toString(),
-                    "65116",
+                    binding.textfieldPhoneFragmentContactUs.text.toString(),
                     binding.textfieldQuestionFragmentContactUs.text.toString()
                 )
             )
@@ -99,9 +101,9 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
         }
     }
 
-    private fun handleUiContact(uiState: DataState<Contact>) {
+    private fun handleUiContact(uiState: DataState<MutableList<Contact>>) {
         when (uiState) {
-            is DataState.Success<Contact> -> {
+            is DataState.Success<MutableList<Contact>> -> {
                 showAlert(
                     requireContext(),
                     getString(R.string.contact_send),
@@ -129,20 +131,20 @@ class ContactUs : Fragment(R.layout.fragment_contact_us) {
         with(binding) {
             textfieldFirstnameFragmentContactUs.setText("")
             textfieldPhoneFragmentContactUs.setText("")
-            textfieldEmailFragmentContactUs.setText("")
-            textfieldQuestionFragmentContactUs.setText("")
+            textfieldEmailFragmentContactUs?.setText("")
+            textfieldQuestionFragmentContactUs?.setText("")
         }
     }
 
     private fun handlerProgressBarVisibility(show: Boolean) {
         with(binding) {
-            iProgressBar?.progressBar?.visibility = if (show) View.VISIBLE else View.GONE
+            iProgressBar.progressBar.visibility = if (show) View.VISIBLE else View.GONE
         }
     }
 
     private fun handlerErrorVisibility(show: Boolean) {
         with(binding) {
-            iGenericError?.clGenericError?.visibility = if (show) View.VISIBLE else View.GONE
+            iGenericError.clGenericError.visibility = if (show) View.VISIBLE else View.GONE
         }
     }
 

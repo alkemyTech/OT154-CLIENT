@@ -45,10 +45,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun setCarrouselObserver() {
         viewModel.activities.observe(viewLifecycleOwner) { activities ->
             binding.carousel.addData(activities)
-            binding.lastestNewsCarousel.addData(viewModel.addItems())
             FirebaseEvent.setLogEvent(requireContext(), "slider_retrieve_success")
-            FirebaseEvent.setLogEvent(requireContext(), "last_news_retrieve_success")
+            
+        }
 
+        viewModel.news.observe(viewLifecycleOwner){ news ->
+            binding.lastestNewsCarousel.addData(news)
+            FirebaseEvent.setLogEvent(requireContext(), "last_news_retrieve_success")
         }
 
         /*En Caso de no obtener datos para mostrar en las listas, se vera un boton retry,
@@ -72,6 +75,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onResume() {
         super.onResume()
         viewModel.getListActivities()
+        viewModel.getListNews()
     }
 
     //Funcion que al realizar click cobre el boton "Ver mas" nos dirige al fragment News - Valderas Leandro

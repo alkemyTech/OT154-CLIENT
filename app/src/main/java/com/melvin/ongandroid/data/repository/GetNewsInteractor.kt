@@ -5,14 +5,14 @@ import com.melvin.ongandroid.data.local.model.NewsModel
 
 class GetNewsInteractor {
 
-    private val repository = NewsRepositoryImpl()
+    private val repository = NewsRepository()
 
     suspend operator fun invoke(): List<NewsModel> {
         val listActivities = repository.getAllNewsFromApi()
-        return if (listActivities.isNullOrEmpty()){
-            emptyList()
+        if (listActivities.isNullOrEmpty()){
+            return emptyList()
         }else{
-            listActivities
+            return listActivities
         }
     }
 }

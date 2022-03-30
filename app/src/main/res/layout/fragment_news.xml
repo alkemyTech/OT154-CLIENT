@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".view.fragments.news.NewsFragment">
+    tools:context=".view.fragments.news.NewsFragment"
+    android:orientation="vertical">
 
-    
-    <TextView
+ <TextView
         android:id="@+id/txtNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/news_title"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -26,14 +26,14 @@
         android:id="@+id/recyclerNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNews"
         app:layout_constraintVertical_bias="0.25"
-        tools:listitem="@layout/item_news"/>
+        tools:listitem="@layout/item_news" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.melvin.ongandroid.application.Validator
-import com.melvin.ongandroid.data.remote.firebase.FirebaseAnalyticsObj
 import com.melvin.ongandroid.data.remote.firebase.FirebaseEvent
 import com.melvin.ongandroid.data.remote.network.APIService
 import com.melvin.ongandroid.data.remote.network.RetrofitInstance

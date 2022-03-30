@@ -10,8 +10,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+<<<<<<< HEAD
+import com.melvin.ongandroid.data.repository.GetActivitiesInteractor
+import com.melvin.ongandroid.data.local.model.ActivityModel
+=======
 import com.melvin.ongandroid.data.local.model.ActivityModel
 import com.melvin.ongandroid.data.repository.GetActivitiesInteractor
+>>>>>>> 3d6b9ac92965984d35d42f13233501898fb3aa00
 import kotlinx.coroutines.launch
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 

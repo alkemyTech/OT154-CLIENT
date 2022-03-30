@@ -1,18 +1,18 @@
 package com.melvin.ongandroid.data.remote.network
 
+import retrofit2.Call
+import retrofit2.Response
 import com.melvin.ongandroid.data.remote.response.ResponseApi
 import com.melvin.ongandroid.data.local.model.Contact
 import com.melvin.ongandroid.data.local.model.Testimonial
 import com.melvin.ongandroid.data.remote.response.SlideModelResponse
 import com.melvin.ongandroid.data.remote.response.NewsResponse
-import retrofit2.Response
 import com.melvin.ongandroid.data.local.model.Activity
-import com.melvin.ongandroid.data.local.model.MembersModel
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.POST
-import com.melvin.ongandroid.data.local.model.login.LoginModel
 import com.melvin.ongandroid.data.remote.response.NewUserResponse
+import com.melvin.ongandroid.data.local.model.login.LoginModel
+import com.melvin.ongandroid.data.local.model.MembersModel
 import retrofit2.http.*
 
 

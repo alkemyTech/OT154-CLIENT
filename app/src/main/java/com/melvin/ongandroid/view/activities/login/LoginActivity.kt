@@ -2,6 +2,7 @@ package com.melvin.ongandroid.view.activities.login
 
 import android.content.Intent
 import android.graphics.Color
+import android.icu.util.TimeUnit.values
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -20,19 +21,26 @@ import com.melvin.ongandroid.data.remote.network.RetrofitInstance
 import com.melvin.ongandroid.data.repository.login.ResourceLogin
 import com.melvin.ongandroid.data.repository.login.preferences.LoginUserPreferences
 import com.melvin.ongandroid.data.repository.login.repository.LoginRepository
-import com.melvin.ongandroid.databinding.LogInBinding
 import com.melvin.ongandroid.view.MainActivity
 import com.melvin.ongandroid.view.activities.signup_user.SignUpUserActivity
 import com.melvin.ongandroid.application.Validator
 import com.melvin.ongandroid.data.remote.network.APIService
+import com.melvin.ongandroid.databinding.LogInBinding
 import com.melvin.ongandroid.presentation.login.LoginViewModel
 import com.melvin.ongandroid.presentation.login.base.LoginViewModelFactory
 import kotlinx.coroutines.launch
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 /**
@@ -41,13 +49,21 @@ import com.google.firebase.auth.FirebaseAuth
  */
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: LogInBinding
 
     private val viewModel by viewModels<LoginViewModel>{LoginViewModelFactory(
         LoginRepository(
             RetrofitInstance.buildApi(APIService::class.java))
     )}
 
-    private lateinit var binding: LogInBinding
+    companion object {
+        private const val TAG = "GoogleActivity"
+        const val RC_SIGN_IN = 9001
+    }
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var googleSignInClient: GoogleSignInClient
+    
     private lateinit var loginUserPreferences: LoginUserPreferences
     private val callbackManager = CallbackManager.Factory.create()
 
@@ -57,26 +73,89 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         loginUserPreferences = LoginUserPreferences(this)
 
+        binding.etEmail.requestFocus()
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken("127892751657-58gdpssca84itm52p4omic1poj55562b.apps.googleusercontent.com")
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        auth = Firebase.auth
+
         setObserver()
 
         binding.etEmail.addTextChangedListener(logInTextWatcher())
         binding.etPassword.addTextChangedListener(logInTextWatcher())
 
         binding.btnSignUp.setOnClickListener {
+            viewModel.setLogsFirebaseEvents(this, "sign_up_pressed")
             startActivity(Intent(this@LoginActivity, SignUpUserActivity::class.java))
         }
 
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
+            viewModel.setLogsFirebaseEvents(this, "log_in_pressed")
             Log.d("VALIDATION", "EMAIL: ${email}, PASSWORD: ${password}")
             viewModel.login(email, password)
         }
 
         binding.ibFacebook.setOnClickListener {
+            viewModel.setLogsFirebaseEvents(this, "facebook_pressed")
             loginWithFacebook()
         }
+
+        binding.ibGoogle.setOnClickListener {
+            viewModel.setLogsFirebaseEvents(this, "gmail_pressed")
+            loginWithGoogle()
+        }
     }
+
+    private fun loginWithGoogle() {
+        val signInIntent = googleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                val account = task.getResult(ApiException::class.java)!!
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
+                firebaseAuthWithGoogle(account.idToken!!)
+            } catch (e: ApiException) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e)
+            }
+        }
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithCredential:success")
+                    val user = auth.currentUser
+                    Toast.makeText(applicationContext, "Bienvenido ${user.toString()}", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                    finish()
+                } else {
+                    // If sign in fails, display a message to the user.
+                    showErrorDialog("Error Google", "Account not Existing")
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+
+                }
+            }
+    }
+
 
     //Funcion para mostrar el modal dialog al llamar al endpoint "api/login"
 
@@ -97,15 +176,19 @@ class LoginActivity : AppCompatActivity() {
         viewModel.loginResponse.observe(this, {
             when(it){
                 is ResourceLogin.Success -> {
-
+                    viewModel.setLogsFirebaseEvents(this, "log_in_success")
                     lifecycleScope.launch {
                         loginUserPreferences.saveTokenUser(it.value.data.token)
                     }
 
                     Toast.makeText(this ,it.value.message, Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, MainActivity::class.java))
+                    finish()
                 }
-                is ResourceLogin.Failure -> { Toast.makeText(this, "Error al cargar. ", Toast.LENGTH_LONG).show()}
+                is ResourceLogin.Failure -> {
+                    viewModel.setLogsFirebaseEvents(this, "log_in_error")
+                    Toast.makeText(this, "Error al cargar. ", Toast.LENGTH_LONG).show()
+                }
             }
         })
     }
@@ -137,6 +220,9 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    override fun finish() {
+        super.finish()
+    }
     //Login with facebook
     fun loginWithFacebook(){
         LoginManager.getInstance().logInWithReadPermissions(this, callbackManager,listOf("email"))
@@ -157,6 +243,7 @@ class LoginActivity : AppCompatActivity() {
                         FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
                             if(it.isSuccessful){
                                 startActivity(Intent(applicationContext, MainActivity::class.java))
+                                finish()
                             }
                             else{
                                 showErrorDialog("Error Facebook", "Account not Existing")

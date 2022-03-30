@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- FragmentContactUs -->
-    <dimen name="size_textview_title_fragment_contactus">14sp</dimen>
+    <dimen name="size_textview_title_fragment_contactus">20sp</dimen>
     <dimen name="size_textfield_fragment_contactus">13sp</dimen>
     <dimen name="padding_main_constraint_layout_fragment_contactus">2dp</dimen>
+
+    <!-- FragmentMemberDetail -->
+    <dimen name="layout_width_height_image_member_fragment_member_detail">120dp</dimen>
+    <dimen name="layout_width_logo_fragment_member_detail">200dp</dimen>
+    <dimen name="layout_height_logo_fragment_member_detail">80dp</dimen>
+    <dimen name="size_textview_member_name_fragment_member_detail">18sp</dimen>
+    <dimen name="size_textview_member_link_fragment_member_detail">14sp</dimen>
+
+
 </resources>

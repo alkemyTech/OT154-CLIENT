@@ -13,9 +13,9 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class ContactUsViewModel(private val repository: ContactRepository) : ViewModel() {
-    val contacts: LiveData<DataState<Contact>>
+    val contacts: LiveData<DataState<MutableList<Contact>>>
         get() = _contacts
-    private val _contacts = MutableLiveData<DataState<Contact>>()
+    private val _contacts = MutableLiveData<DataState<MutableList<Contact>>>()
 
     //Metodo que salva contacto - Valderas Leandro
 

@@ -10,7 +10,7 @@ import com.melvin.ongandroid.data.datasource.NewsDataSource
 import com.melvin.ongandroid.data.datasource.NewsDataSourceImpl
 import com.melvin.ongandroid.data.local.model.NewsModel
 
-class NewsRepositoryImpl: NewsRepository {
+class NewsRepositoryImpl: NewsRepository() {
 
     private val dataSource: NewsDataSource = NewsDataSourceImpl()
 
